@@ -3,8 +3,7 @@ import numpy as np
 import logging
 
 class MissingInformation:
-    def __init__(self,df:pd.DataFrame):
-        self.df = df
+    def __init__(self):
         logging.basicConfig(filename='../logfile.log', filemode='a',
                             encoding='utf-8', level=logging.DEBUG)
         
