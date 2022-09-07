@@ -1,0 +1,182 @@
+DEBUG:git.cmd:Popen(['git', 'version'], cwd=/Users/user/TENAC/week-1-4/Week-3/pharmaceutical-sales-prediction/notebooks, universal_newlines=False, shell=None, istream=None)
+DEBUG:git.cmd:Popen(['git', 'version'], cwd=/Users/user/TENAC/week-1-4/Week-3/pharmaceutical-sales-prediction/notebooks, universal_newlines=False, shell=None, istream=None)
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): github.com:443
+DEBUG:urllib3.connectionpool:https://github.com:443 "GET /degagawolde/pharmaceutical-sales-prediction.git/info/refs?service=git-upload-pack HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (2): github.com:443
+DEBUG:urllib3.connectionpool:https://github.com:443 "POST /degagawolde/pharmaceutical-sales-prediction.git/git-upload-pack HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): github.com:443
+DEBUG:urllib3.connectionpool:https://github.com:443 "GET /degagawolde/pharmaceutical-sales-prediction.git/info/refs?service=git-upload-pack HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (2): github.com:443
+DEBUG:urllib3.connectionpool:https://github.com:443 "POST /degagawolde/pharmaceutical-sales-prediction.git/git-upload-pack HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): github.com:443
+DEBUG:urllib3.connectionpool:https://github.com:443 "GET /degagawolde/pharmaceutical-sales-prediction.git/info/refs?service=git-upload-pack HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): github.com:443
+DEBUG:urllib3.connectionpool:https://github.com:443 "GET /degagawolde/pharmaceutical-sales-prediction.git/info/refs?service=git-upload-pack HTTP/1.1" 200 None
+ERROR:DataLoaderLogger:DVC data getter raised an exception
+Traceback (most recent call last):
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/scm.py", line 159, in resolve_rev
+    return scm.resolve_rev(fix_exp_head(scm, rev))
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/git/__init__.py", line 289, in _backend_func
+    result = func(*args, **kwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/git/backend/pygit2.py", line 303, in resolve_rev
+    raise RevError(f"unknown Git revision '{rev}'")
+scmrepo.exceptions.RevError: unknown Git revision 'store_v1'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/user/TENAC/week-1-4/Week-3/pharmaceutical-sales-prediction/notebooks/../scripts/dvc_data_fetch.py", line 25, in dvc_get_data
+    content = dvc.api.read(path=path,
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/api/data.py", line 210, in read
+    with open(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/api/data.py", line 197, in _open
+    with Repo.open(repo, rev=rev, subrepos=True, uninitialized=True) as _repo:
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/external_repo.py", line 77, in external_repo
+    repo = Repo(**repo_kwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/repo/__init__.py", line 180, in __init__
+    self.root_dir, self.dvc_dir, self.tmp_dir = self._get_repo_dirs(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/repo/__init__.py", line 99, in _get_repo_dirs
+    root_dir = self.find_root(root_dir, fs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/repo/__init__.py", line 334, in find_root
+    root_dir = fs.path.realpath(root)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/funcy/objects.py", line 28, in __get__
+    res = instance.__dict__[self.fget.__name__] = self.fget(instance)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/fs/git.py", line 50, in path
+    return self.fs.path
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/funcy/objects.py", line 50, in __get__
+    return prop.__get__(instance, type)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/funcy/objects.py", line 28, in __get__
+    res = instance.__dict__[self.fget.__name__] = self.fget(instance)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/fs/git.py", line 46, in fs
+    return FsspecGitFileSystem(**self.fs_args)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/fsspec/spec.py", line 76, in __call__
+    obj = super().__call__(*args, **kwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/fs.py", line 174, in __init__
+    resolved = resolver(scm, rev or "HEAD")
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/scm.py", line 176, in resolve_rev
+    raise RevError(str(exc))
+dvc.scm.RevError: unknown Git revision 'store_v1'
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): github.com:443
+DEBUG:urllib3.connectionpool:https://github.com:443 "GET /degagawolde/pharmaceutical-sales-prediction.git/info/refs?service=git-upload-pack HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): github.com:443
+DEBUG:urllib3.connectionpool:https://github.com:443 "GET /degagawolde/pharmaceutical-sales-prediction.git/info/refs?service=git-upload-pack HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): github.com:443
+DEBUG:urllib3.connectionpool:https://github.com:443 "GET /degagawolde/pharmaceutical-sales-prediction.git/info/refs?service=git-upload-pack HTTP/1.1" 200 None
+ERROR:DataLoaderLogger:DVC data getter raised an exception
+Traceback (most recent call last):
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/scm.py", line 159, in resolve_rev
+    return scm.resolve_rev(fix_exp_head(scm, rev))
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/git/__init__.py", line 289, in _backend_func
+    result = func(*args, **kwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/git/backend/pygit2.py", line 303, in resolve_rev
+    raise RevError(f"unknown Git revision '{rev}'")
+scmrepo.exceptions.RevError: unknown Git revision 'store_v1'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/user/TENAC/week-1-4/Week-3/pharmaceutical-sales-prediction/notebooks/../scripts/dvc_data_fetch.py", line 25, in dvc_get_data
+    content = dvc.api.read(path=path,
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/api/data.py", line 210, in read
+    with open(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/api/data.py", line 197, in _open
+    with Repo.open(repo, rev=rev, subrepos=True, uninitialized=True) as _repo:
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/external_repo.py", line 77, in external_repo
+    repo = Repo(**repo_kwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/repo/__init__.py", line 180, in __init__
+    self.root_dir, self.dvc_dir, self.tmp_dir = self._get_repo_dirs(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/repo/__init__.py", line 99, in _get_repo_dirs
+    root_dir = self.find_root(root_dir, fs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/repo/__init__.py", line 334, in find_root
+    root_dir = fs.path.realpath(root)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/funcy/objects.py", line 28, in __get__
+    res = instance.__dict__[self.fget.__name__] = self.fget(instance)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/fs/git.py", line 50, in path
+    return self.fs.path
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/funcy/objects.py", line 50, in __get__
+    return prop.__get__(instance, type)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/funcy/objects.py", line 28, in __get__
+    res = instance.__dict__[self.fget.__name__] = self.fget(instance)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/fs/git.py", line 46, in fs
+    return FsspecGitFileSystem(**self.fs_args)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/fsspec/spec.py", line 76, in __call__
+    obj = super().__call__(*args, **kwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/fs.py", line 174, in __init__
+    resolved = resolver(scm, rev or "HEAD")
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/scm.py", line 176, in resolve_rev
+    raise RevError(str(exc))
+dvc.scm.RevError: unknown Git revision 'store_v1'
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): github.com:443
+DEBUG:urllib3.connectionpool:https://github.com:443 "GET /degagawolde/pharmaceutical-sales-prediction.git/info/refs?service=git-upload-pack HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): github.com:443
+DEBUG:urllib3.connectionpool:https://github.com:443 "GET /degagawolde/pharmaceutical-sales-prediction.git/info/refs?service=git-upload-pack HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): github.com:443
+DEBUG:urllib3.connectionpool:https://github.com:443 "GET /degagawolde/pharmaceutical-sales-prediction.git/info/refs?service=git-upload-pack HTTP/1.1" 200 None
+ERROR:DataLoaderLogger:DVC data getter raised an exception
+Traceback (most recent call last):
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/scm.py", line 159, in resolve_rev
+    return scm.resolve_rev(fix_exp_head(scm, rev))
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/git/__init__.py", line 289, in _backend_func
+    result = func(*args, **kwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/git/backend/pygit2.py", line 303, in resolve_rev
+    raise RevError(f"unknown Git revision '{rev}'")
+scmrepo.exceptions.RevError: unknown Git revision 'store_v1'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/user/TENAC/week-1-4/Week-3/pharmaceutical-sales-prediction/notebooks/../scripts/dvc_data_fetch.py", line 25, in dvc_get_data
+    content = dvc.api.read(path=path,
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/api/data.py", line 210, in read
+    with open(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/api/data.py", line 197, in _open
+    with Repo.open(repo, rev=rev, subrepos=True, uninitialized=True) as _repo:
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/external_repo.py", line 77, in external_repo
+    repo = Repo(**repo_kwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/repo/__init__.py", line 180, in __init__
+    self.root_dir, self.dvc_dir, self.tmp_dir = self._get_repo_dirs(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/repo/__init__.py", line 99, in _get_repo_dirs
+    root_dir = self.find_root(root_dir, fs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/repo/__init__.py", line 334, in find_root
+    root_dir = fs.path.realpath(root)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/funcy/objects.py", line 28, in __get__
+    res = instance.__dict__[self.fget.__name__] = self.fget(instance)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/fs/git.py", line 50, in path
+    return self.fs.path
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/funcy/objects.py", line 50, in __get__
+    return prop.__get__(instance, type)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/funcy/objects.py", line 28, in __get__
+    res = instance.__dict__[self.fget.__name__] = self.fget(instance)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/fs/git.py", line 46, in fs
+    return FsspecGitFileSystem(**self.fs_args)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/fsspec/spec.py", line 76, in __call__
+    obj = super().__call__(*args, **kwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/fs.py", line 174, in __init__
+    resolved = resolver(scm, rev or "HEAD")
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/scm.py", line 176, in resolve_rev
+    raise RevError(str(exc))
+dvc.scm.RevError: unknown Git revision 'store_v1'
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): github.com:443
+DEBUG:urllib3.connectionpool:https://github.com:443 "GET /degagawolde/pharmaceutical-sales-prediction.git/info/refs?service=git-upload-pack HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): github.com:443
+DEBUG:urllib3.connectionpool:https://github.com:443 "GET /degagawolde/pharmaceutical-sales-prediction.git/info/refs?service=git-upload-pack HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): github.com:443
+DEBUG:urllib3.connectionpool:https://github.com:443 "GET /degagawolde/pharmaceutical-sales-prediction.git/info/refs?service=git-upload-pack HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): github.com:443
+DEBUG:urllib3.connectionpool:https://github.com:443 "GET /degagawolde/pharmaceutical-sales-prediction.git/info/refs?service=git-upload-pack HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): github.com:443
+DEBUG:urllib3.connectionpool:https://github.com:443 "GET /degagawolde/pharmaceutical-sales-prediction.git/info/refs?service=git-upload-pack HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): github.com:443
+DEBUG:urllib3.connectionpool:https://github.com:443 "GET /degagawolde/pharmaceutical-sales-prediction.git/info/refs?service=git-upload-pack HTTP/1.1" 200 None
