@@ -14,6 +14,13 @@ class Plotters:
         plt.title(f'Distribution of {column}', size=20, fontweight='bold')
         plt.show()
 
+    def plot_hist_many(self, df: pd.DataFrame, columns: list, color: list) -> None:
+        for i,col in enumerate(columns):
+            sns.displot(data=df, x=col, color=color[i],
+                    kde=True, height=self.h, aspect=2,rug=True)
+            plt.title(f'Distribution of {col}', size=20, fontweight='bold')
+        plt.show()
+        
     def plot_count(self, df: pd.DataFrame, column: str) -> None:
         plt.figure(figsize=(self.w, self.h))
         sns.countplot(data=df, x=column)
@@ -86,7 +93,8 @@ class Plotters:
 
     def plot_pie(self, df: pd.DataFrame, column: str, title="") -> None:
         plt.figure(figsize=(self.w, self.h))
-        df['column'].plot.pie()
+
+        df[column].plot.pie()
         plt.title(title, size=20)
         plt.xticks(fontsize=14)
         plt.yticks(fontsize=14)
