@@ -13,7 +13,7 @@ class Plotters:
                     kde=True, height=self.h, aspect=2)
         plt.title(f'Distribution of {column}', size=20, fontweight='bold')
         plt.show()
-    
+
     def plot_hist_many(self, df: pd.DataFrame, columns: list, color: list) -> None:
         for i,col in enumerate(columns):
             sns.displot(data=df, x=col, color=color[i],
@@ -93,6 +93,7 @@ class Plotters:
 
     def plot_pie(self, df: pd.DataFrame, column: str, title="") -> None:
         plt.figure(figsize=(self.w, self.h))
+
         df[column].plot.pie()
         plt.title(title, size=20)
         plt.xticks(fontsize=14)

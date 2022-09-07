@@ -6,14 +6,14 @@ import logging
 import sys, os
 import re
 
-
-sys.path.append(os.path.abspath(os.path.join("../")))
-
+sys.path.append(os.path.abspath(os.path.join("./script")))
 from scripts.get_missing_information import MissingInformation
-
+ 
+from get_missing_information import MissingInformation
 class DataFrameInformation:
     
-    def __init__(self):
+    def __init__(self,data:pd.DataFrame):
+        self.data = data
         logging.basicConfig(filename='../logfile.log', filemode='a',
                             encoding='utf-8', level=logging.DEBUG)
         
@@ -29,8 +29,9 @@ class DataFrameInformation:
     #calculate skewness and missing value table
     def get_skewness_missing_count(self,data:pd.DataFrame):
         df_skewness = self.get_skewness(data)
+
         minfo = MissingInformation()
-        
+
         mis_val_table_ren_columns = minfo.missing_values_table(data)
         df = pd.concat([df_skewness, mis_val_table_ren_columns], axis=1)
         df['Dtype'] = df['Dtype'].fillna('float64')
@@ -55,7 +56,7 @@ class DataFrameInformation:
         logging.info(
             'the dataset contain {} columns with missing values'.format(i))
         return pd.DataFrame({'column name': columns, 'counts': counts})
-    
+
     def check_date_range(self,df: pd.DataFrame) -> None:
         """This function assumes df has a Date column and checks if 
         there are missing dates by counting unique dates.
@@ -68,3 +69,4 @@ class DataFrameInformation:
         unique_dates = df['Date'].unique()
         print(f"There are {len(unique_dates)} unique dates in the data.\n\
                 The number of days between the end and start date is {(end_date-start_date).days}")
+
