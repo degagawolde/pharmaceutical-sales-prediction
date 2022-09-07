@@ -10,7 +10,7 @@ The finance team at ***Rossman*** wants to forecast sales in all thier stores ac
 - EDA regarding the train.csv and test.csv data is done in ***notebooks/SalesDataExploration.ipynb***
 - EDA for the questions guided analysis in done in ***notebooks/ DataExploration.ipynb***
 ### Logging
-Logging is a means of tracking events that happen when some software runs [here](https://docs.python.org/3/howto/logging.html)
+[Logging](https://docs.python.org/3/howto/logging.html) is a means of tracking events that happen when some software runs.
 ```
 import logging
 logging.warning('Watch out!')  # will print a message to the console
