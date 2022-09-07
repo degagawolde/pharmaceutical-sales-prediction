@@ -5,7 +5,10 @@ The finance team at ***Rossman*** wants to forecast sales in all thier stores ac
 
 # Exploration of customer purchasing behavior
 ### Store data exploration
+EDA regarding the store.csv data is done in ***notebooks/StoreDataExploration.ipynb***
 ### Sales data exploration
+EDA regarding the train.csv and test.csv data is done in ***notebooks/SalesDataExploration.ipynb***
+EDA for the questions guided analysis in done in ***notebooks/ DataExploration.ipynb***
 ### Logging
 # Prediction of store sales
 ### Preprocessing
