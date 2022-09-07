@@ -5,11 +5,17 @@ The finance team at ***Rossman*** wants to forecast sales in all thier stores ac
 
 # Exploration of customer purchasing behavior
 ### Store data exploration
-EDA regarding the store.csv data is done in ***notebooks/StoreDataExploration.ipynb***
+- EDA regarding the store.csv data is done in ***notebooks/StoreDataExploration.ipynb***
 ### Sales data exploration
-EDA regarding the train.csv and test.csv data is done in ***notebooks/SalesDataExploration.ipynb***
-EDA for the questions guided analysis in done in ***notebooks/ DataExploration.ipynb***
+- EDA regarding the train.csv and test.csv data is done in ***notebooks/SalesDataExploration.ipynb***
+- EDA for the questions guided analysis in done in ***notebooks/ DataExploration.ipynb***
 ### Logging
+Logging is a means of tracking events that happen when some software runs [here](https://docs.python.org/3/howto/logging.html)
+```
+import logging
+logging.warning('Watch out!')  # will print a message to the console
+logging.info('I told you so')
+```
 # Prediction of store sales
 ### Preprocessing
 ### Building models with sklearn pipelines
