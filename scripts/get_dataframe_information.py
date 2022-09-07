@@ -9,11 +9,9 @@ import re
 sys.path.append(os.path.abspath(os.path.join("./script")))
 from scripts.get_missing_information import MissingInformation
  
-from get_missing_information import MissingInformation
 class DataFrameInformation:
     
-    def __init__(self,data:pd.DataFrame):
-        self.data = data
+    def __init__(self):
         logging.basicConfig(filename='../logfile.log', filemode='a',
                             encoding='utf-8', level=logging.DEBUG)
         
