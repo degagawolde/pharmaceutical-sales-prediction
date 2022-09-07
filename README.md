@@ -5,10 +5,10 @@ The finance team at ***Rossman*** wants to forecast sales in all thier stores ac
 
 # Exploration of customer purchasing behavior
 ### Store data exploration
-- EDA regarding the store.csv data is done in ***notebooks/StoreDataExploration.ipynb***
+- EDA regarding the store.csv data is done in [***notebooks/StoreDataExploration.ipynb***](https://github.com/degagawolde/pharmaceutical-sales-prediction/tree/main/notebooks)
 ### Sales data exploration
-- EDA regarding the train.csv and test.csv data is done in ***notebooks/SalesDataExploration.ipynb***
-- EDA for the questions guided analysis in done in ***notebooks/ DataExploration.ipynb***
+- EDA regarding the train.csv and test.csv data is done in [***notebooks/SalesDataExploration.ipynb***](https://github.com/degagawolde/pharmaceutical-sales-prediction/tree/main/notebooks)
+- EDA for the questions guided analysis in done in [***notebooks/ DataExploration.ipynb***](https://github.com/degagawolde/pharmaceutical-sales-prediction/tree/main/notebooks)
 ### Logging
 [Logging](https://docs.python.org/3/howto/logging.html) is a means of tracking events that happen when some software runs.
 ```
