@@ -180,3 +180,17 @@ DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): github.com:443
 DEBUG:urllib3.connectionpool:https://github.com:443 "GET /degagawolde/pharmaceutical-sales-prediction.git/info/refs?service=git-upload-pack HTTP/1.1" 200 None
 DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): github.com:443
 DEBUG:urllib3.connectionpool:https://github.com:443 "GET /degagawolde/pharmaceutical-sales-prediction.git/info/refs?service=git-upload-pack HTTP/1.1" 200 None
+DEBUG:git.cmd:Popen(['git', 'version'], cwd=/Users/user/TENAC/week-1-4/Week-3/pharmaceutical-sales-prediction/notebooks, universal_newlines=False, shell=None, istream=None)
+DEBUG:git.cmd:Popen(['git', 'version'], cwd=/Users/user/TENAC/week-1-4/Week-3/pharmaceutical-sales-prediction/notebooks, universal_newlines=False, shell=None, istream=None)
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): github.com:443
+DEBUG:urllib3.connectionpool:https://github.com:443 "GET /degagawolde/pharmaceutical-sales-prediction.git/info/refs?service=git-upload-pack HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (2): github.com:443
+DEBUG:urllib3.connectionpool:https://github.com:443 "POST /degagawolde/pharmaceutical-sales-prediction.git/git-upload-pack HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): github.com:443
+DEBUG:urllib3.connectionpool:https://github.com:443 "GET /degagawolde/pharmaceutical-sales-prediction.git/info/refs?service=git-upload-pack HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (2): github.com:443
+DEBUG:urllib3.connectionpool:https://github.com:443 "POST /degagawolde/pharmaceutical-sales-prediction.git/git-upload-pack HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): github.com:443
+DEBUG:urllib3.connectionpool:https://github.com:443 "GET /degagawolde/pharmaceutical-sales-prediction.git/info/refs?service=git-upload-pack HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): github.com:443
+DEBUG:urllib3.connectionpool:https://github.com:443 "GET /degagawolde/pharmaceutical-sales-prediction.git/info/refs?service=git-upload-pack HTTP/1.1" 200 None
