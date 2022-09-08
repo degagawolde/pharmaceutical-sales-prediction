@@ -112,7 +112,6 @@ jsonschema==3.2.0
 kiwisolver==1.4.4
 kombu==5.2.4
 Mako==1.2.2
-mamba==0.25.0
 MarkupSafe==2.1.1
 matplotlib==3.5.3
 matplotlib-inline==0.1.2
