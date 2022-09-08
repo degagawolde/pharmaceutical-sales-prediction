@@ -139,7 +139,9 @@ nltk==3.7
 notebook==6.4.12
 notebook-shim==0.1.0
 numexpr==2.8.3
-oauth2client==3.0.0
+# oauth2client==3.0.0
+# PyDrive==1.2.1
+# PyDrive2
 oauthlib==3.2.0
 omegaconf==2.2.3
 opencv-python==4.6.0.66
@@ -175,8 +177,6 @@ pycosat==0.6.3
 pycparser==2.21
 pydeck==0.7.1
 pydot==1.4.2
-PyDrive==1.2.1
-# PyDrive2
 pygit2==1.10.1
 Pygments==2.11.2
 pygtrie==2.5.0
