@@ -7,6 +7,11 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
       - uses: iterative/setup-cml@v1
+      - name: Train model
+        run: |
+         pip install Cython
+         pip install -r requirements.txt
+        #  python scripts/modeling.py
       - name: Fetch Dataset
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -16,11 +21,6 @@ jobs:
           touch .dvc/tmp/gdrive-user-credentials.json
           echo $GDRIVE_TOKEN > .dvc/tmp/gdrive-user-credentials.json
           dvc pull -r dvc_remote 
-      - name: Train model
-        run: |
-         pip install Cython
-         pip install -r requirements.txt
-        #  python scripts/modeling.py
       - name: write to CML report
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
