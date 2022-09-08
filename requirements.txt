@@ -79,6 +79,7 @@ fsspec==2022.8.0
 funcy==1.17
 fusepy==3.0.1
 future==0.18.2
+gdrivefs==0.14.13
 gensim==4.2.0
 gitdb==4.0.9
 GitPython==3.1.27
@@ -138,10 +139,8 @@ nltk==3.7
 notebook==6.4.12
 notebook-shim==0.1.0
 numexpr==2.8.3
-oauth2client==4.0.0
+oauth2client
 oauthlib==3.2.0
-ez_setup
-gdrivefs
 omegaconf==2.2.3
 opencv-python==4.6.0.66
 openpyxl==3.0.10
@@ -219,6 +218,7 @@ smart-open==6.0.0
 smmap==5.0.0
 sniffio==1.2.0
 soupsieve==2.3.1
+sprt==0.0.1
 SQLAlchemy==1.4.39
 sqlparse==0.4.2
 stack-data==0.2.0
