@@ -7,6 +7,7 @@ amqp==5.1.1
 antlr4-python3-runtime==4.9.3
 anyascii==0.3.1
 numpy==1.23.1
+ntfsutils
 anyio==3.6.1
 appdirs==1.4.4
 appnope==0.1.2
@@ -138,9 +139,9 @@ nltk==3.7
 notebook==6.4.12
 notebook-shim==0.1.0
 numexpr==2.8.3
-# oauth2client==3.0.0
-# PyDrive==1.2.1
-# PyDrive2
+oauth2client
+PyDrive
+PyDrive2
 oauthlib==3.2.0
 omegaconf==2.2.3
 opencv-python==4.6.0.66
