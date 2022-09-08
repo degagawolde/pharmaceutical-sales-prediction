@@ -56,7 +56,6 @@ distro==1.7.0
 docker==5.0.3
 dpath==2.0.6
 dulwich==0.20.45
-dvc
 emoji==2.0.0
 entrypoints==0.4
 et-xmlfile==1.1.0
