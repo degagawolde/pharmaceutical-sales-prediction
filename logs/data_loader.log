@@ -3192,3 +3192,5 @@ dvc.scm.RevError: unknown Git revision 'test_v2'
 2022-09-08 15:51:11,859 - DataLoaderLogger - INFO - DVC: CSV file read with path: data/merged/train.csv | version: train_v2 | from: ../
 2022-09-08 15:51:13,882 - DataLoaderLogger - INFO - DVC: CSV file read with path: data/merged/test.csv | version: test_v2 | from: ../
 2022-09-08 18:06:01,913 - DataLoaderLogger - INFO - DVC: CSV file read with path: data/cleaned/store.csv | version: store_v2 | from: ../
+2022-09-08 18:11:38,453 - DataLoaderLogger - INFO - DVC: CSV file read with path: data/merged/train.csv | version: train_v2 | from: ../
+2022-09-08 18:11:47,390 - DataLoaderLogger - INFO - DVC: CSV file read with path: data/merged/test.csv | version: test_v2 | from: ../
