@@ -140,6 +140,7 @@ notebook-shim==0.1.0
 numexpr==2.8.3
 oauth2client==4.0.0
 oauthlib==3.2.0
+ez_setup
 gdrivefs
 omegaconf==2.2.3
 opencv-python==4.6.0.66
