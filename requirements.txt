@@ -176,7 +176,7 @@ pycparser==2.21
 pydeck==0.7.1
 pydot==1.4.2
 PyDrive==1.2.1
-PyDrive2==1.7.2
+PyDrive2==0.14.0
 pygit2==1.10.1
 Pygments==2.11.2
 pygtrie==2.5.0
