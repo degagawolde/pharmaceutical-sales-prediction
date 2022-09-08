@@ -57,13 +57,6 @@ docker==5.0.3
 dpath==2.0.6
 dulwich==0.20.45
 dvc
-dvc-data==0.2.0
-dvc-gdrive==2.19.0
-dvc-http==2.19.1
-dvc-objects==0.1.16
-dvc-render
-dvc-task==0.1.2
-dvclive==0.10.0
 emoji==2.0.0
 entrypoints==0.4
 et-xmlfile==1.1.0
