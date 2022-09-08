@@ -40,8 +40,6 @@ click-repl==0.2.0
 cloudpickle==2.1.0
 colorama==0.4.5
 commonmark==0.9.1
-conda==4.14.0
-conda-package-handling==1.8.1
 configobj==5.0.6
 contractions==0.0.18
 cryptography==37.0.4
