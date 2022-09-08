@@ -20,7 +20,7 @@ jobs:
           mkdir -p .dvc/tmp
           touch .dvc/tmp/gdrive-user-credentials.json
           echo $GDRIVE_TOKEN > .dvc/tmp/gdrive-user-credentials.json
-          dvc pull -r myremote 
+          dvc pull 
       - name: write to CML report
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
