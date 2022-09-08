@@ -6,8 +6,6 @@ altair==4.2.0
 amqp==5.1.1
 antlr4-python3-runtime==4.9.3
 anyascii==0.3.1
-numpy==1.23.1
-ntfsutils
 anyio==3.6.1
 appdirs==1.4.4
 appnope==0.1.2
@@ -56,6 +54,14 @@ distro==1.7.0
 docker==5.0.3
 dpath==2.0.6
 dulwich==0.20.45
+dvc==2.23.0
+dvc-data==0.2.0
+dvc-gdrive==2.19.0
+dvc-http==2.19.1
+dvc-objects==0.1.16
+dvc-render==0.0.9
+dvc-task==0.1.2
+dvclive==0.10.0
 emoji==2.0.0
 entrypoints==0.4
 et-xmlfile==1.1.0
@@ -67,10 +73,10 @@ flatten-dict==0.4.2
 flufl.lock==7.1
 fonttools==4.34.4
 frozenlist==1.3.1
-fsspec
 funcy==1.17
 fusepy==3.0.1
 future==0.18.2
+# gdrivefs==0.14.13
 gensim==4.2.0
 gitdb==4.0.9
 GitPython==3.1.27
@@ -101,6 +107,13 @@ json5==0.9.5
 jsonpointer==2.3
 jsonref==0.2
 jsonschema==3.2.0
+jupyter-client==7.2.2
+jupyter-core==4.10.0
+jupyter-server==1.18.1
+jupyterlab==3.4.5
+jupyterlab-pygments==0.1.2
+jupyterlab-server==2.15.0
+jupyterlab-widgets==1.1.1
 kiwisolver==1.4.4
 kombu==5.2.4
 Mako==1.2.2
@@ -110,6 +123,7 @@ matplotlib-inline==0.1.2
 missingno==0.5.1
 mistune==0.8.4
 mizani==0.7.4
+mlflow==1.28.0
 monotonic==1.6
 msgpack==1.0.4
 multidict==6.0.2
@@ -126,14 +140,9 @@ neptune-client==0.16.5
 neptune-notebooks==0.9.3
 nest-asyncio==1.5.5
 networkx==2.8.6
-nltk==3.7
-notebook==6.4.12
-notebook-shim==0.1.0
 numexpr==2.8.3
-# oauth2client
-# PyDrive
-# PyDrive2
-# gdrivefs
+numpy==1.23.1
+oauth2client==4.0.0
 oauthlib==3.2.0
 omegaconf==2.2.3
 opencv-python==4.6.0.66
@@ -150,7 +159,6 @@ patsy==0.5.2
 pexpect==4.8.0
 pickleshare==0.7.5
 Pillow==9.2.0
-pip==22.1.2
 plotly==5.10.0
 plotnine==0.9.0
 prometheus-client==0.14.1
@@ -169,6 +177,8 @@ pycosat==0.6.3
 pycparser==2.21
 pydeck==0.7.1
 pydot==1.4.2
+PyDrive==1.3.1
+# PyDrive2==1.14.0
 pygit2==1.10.1
 Pygments==2.11.2
 pygtrie==2.5.0
@@ -207,7 +217,6 @@ simplejson==3.17.6
 six==1.16.0
 sklearn==0.0
 smart-open==6.0.0
-smmap==5.0.0
 sniffio==1.2.0
 soupsieve==2.3.1
 SQLAlchemy==1.4.39
