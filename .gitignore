@@ -1,4 +1,3 @@
-logs/
 data/merged/train.csv
 data/merged/test.csv
 data/raw/test.csv
