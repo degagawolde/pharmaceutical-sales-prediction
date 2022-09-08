@@ -3185,3 +3185,6 @@ Traceback (most recent call last):
   File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/scm.py", line 176, in resolve_rev
     raise RevError(str(exc))
 dvc.scm.RevError: unknown Git revision 'test_v2'
+2022-09-08 14:17:37,631 - DataLoaderLogger - INFO - DVC: CSV file read with path: data/cleaned/store.csv | version: store_v2 | from: ../
+2022-09-08 14:18:27,455 - DataLoaderLogger - INFO - DVC: CSV file read with path: data/merged/train.csv | version: train_v2 | from: ../
+2022-09-08 14:18:29,674 - DataLoaderLogger - INFO - DVC: CSV file read with path: data/merged/test.csv | version: test_v2 | from: ../
