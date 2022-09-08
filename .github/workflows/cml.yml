@@ -19,7 +19,7 @@ jobs:
       - name: Train model
         run: |
          pip install Cython
-        #  pip install -r requirements.txt
+         pip install -r requirements.txt
         #  python scripts/modeling.py
       - name: write to CML report
         env:
