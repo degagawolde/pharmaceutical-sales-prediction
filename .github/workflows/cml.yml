@@ -7,6 +7,15 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
       - uses: iterative/setup-cml@v1
+      - name: Fetch Dataset
+        env:
+          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GDRIVE_TOKEN: ${{ secrets.GDRIVE_CREDENTIALS_DATA }}
+        run: |
+          mkdir -p .dvc/tmp
+          touch .dvc/tmp/gdrive-user-credentials.json
+          echo $GDRIVE_TOKEN > .dvc/tmp/gdrive-user-credentials.json
+          dvc pull -r dvc_remote 
       - name: Train model
         run: |
          pip install Cython
