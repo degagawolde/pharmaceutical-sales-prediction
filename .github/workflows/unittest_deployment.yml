@@ -30,16 +30,22 @@ jobs:
           pip install Cython
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+
+      - name: Fetch Dataset
+        env:
+          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GDRIVE_TOKEN: ${{ secrets.GDRIVE_CREDENTIALS_DATA }}
+        run: |
+          mkdir -p .dvc/tmp
+          touch .dvc/tmp/gdrive-user-credentials.json
+          echo $GDRIVE_TOKEN > .dvc/tmp/gdrive-user-credentials.json
+          dvc pull -r myremote 
+
       - name: Run tests
-        run: python -m unittest tests/test_dvc.py
-      - name: push docker login
-        uses: docker/login-action@v1
-        with: 
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-     
-      # - name: publish
-      #   uses: pennsignals/publish_docker-compose@v0.1.0
-      #   with:
-      #     docker_compose: 'docker-compose.yml' 
-      #     repo_token: "${{ secrets.GITHUB_TOKEN }}"
+        env:
+          BRANCH_NAME: ${{ github.head_ref || github.ref_name }} 
+        run: |
+          echo $BRANCH_NAME
+          git config pull.rebase true
+          git pull origin $BRANCH_NAME --tags --prune
+          python -m unittest tests/test_dvc.py

@@ -2359,3 +2359,829 @@ http.client.RemoteDisconnected: Remote end closed connection without response
 2022-09-08 11:44:29,397 - DataLoaderLogger - INFO - DVC: CSV file read with path: data/cleaned/store.csv | version: store_v2 | from: ../
 2022-09-08 11:45:19,615 - DataLoaderLogger - INFO - DVC: CSV file read with path: data/merged/train.csv | version: train_v2 | from: ../
 2022-09-08 11:45:21,773 - DataLoaderLogger - INFO - DVC: CSV file read with path: data/merged/test.csv | version: test_v2 | from: ../
+2022-09-08 13:38:26,110 - DataLoaderLogger - ERROR - DVC data getter raised an exception
+Traceback (most recent call last):
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/git/backend/dulwich/__init__.py", line 128, in __init__
+    self.repo = Repo.discover(start=root_dir)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dulwich/repo.py", line 1184, in discover
+    raise NotGitRepository(
+dulwich.errors.NotGitRepository: No git repository was found at ../
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/scm.py", line 76, in map_scm_exception
+    yield
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/scm.py", line 102, in SCM
+    return Git(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/git/__init__.py", line 98, in __init__
+    first_ = first(self.backends.values())
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/funcy/seqs.py", line 55, in first
+    return next(iter(seq), None)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/_collections_abc.py", line 925, in __iter__
+    yield self._mapping[key]
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/git/__init__.py", line 49, in __getitem__
+    initialized = backend(*self.args, **self.kwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/git/backend/dulwich/__init__.py", line 132, in __init__
+    raise SCMError(f"{root_dir} is not a git repository") from exc
+scmrepo.exceptions.SCMError: ../ is not a git repository
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/user/TENAC/week-1-4/Week-3/pharmaceutical-sales-prediction/scripts/dvc_data_fetch.py", line 25, in dvc_get_data
+    content = dvc.api.read(path=path,
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/api/data.py", line 210, in read
+    with open(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/api/data.py", line 197, in _open
+    with Repo.open(repo, rev=rev, subrepos=True, uninitialized=True) as _repo:
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/repo/__init__.py", line 250, in open
+    return Repo(url, *args, **kwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/repo/__init__.py", line 176, in __init__
+    self._scm = scm = SCM(root_dir or os.curdir)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/scm.py", line 99, in SCM
+    with map_scm_exception():
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/scm.py", line 81, in map_scm_exception
+    raise into
+dvc.scm.SCMError: ../ is not a git repository
+2022-09-08 13:38:26,114 - DataLoaderLogger - ERROR - DVC data getter raised an exception
+Traceback (most recent call last):
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/git/backend/dulwich/__init__.py", line 128, in __init__
+    self.repo = Repo.discover(start=root_dir)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dulwich/repo.py", line 1184, in discover
+    raise NotGitRepository(
+dulwich.errors.NotGitRepository: No git repository was found at ../
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/scm.py", line 76, in map_scm_exception
+    yield
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/scm.py", line 102, in SCM
+    return Git(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/git/__init__.py", line 98, in __init__
+    first_ = first(self.backends.values())
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/funcy/seqs.py", line 55, in first
+    return next(iter(seq), None)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/_collections_abc.py", line 925, in __iter__
+    yield self._mapping[key]
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/git/__init__.py", line 49, in __getitem__
+    initialized = backend(*self.args, **self.kwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/git/backend/dulwich/__init__.py", line 132, in __init__
+    raise SCMError(f"{root_dir} is not a git repository") from exc
+scmrepo.exceptions.SCMError: ../ is not a git repository
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/user/TENAC/week-1-4/Week-3/pharmaceutical-sales-prediction/scripts/dvc_data_fetch.py", line 25, in dvc_get_data
+    content = dvc.api.read(path=path,
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/api/data.py", line 210, in read
+    with open(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/api/data.py", line 197, in _open
+    with Repo.open(repo, rev=rev, subrepos=True, uninitialized=True) as _repo:
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/repo/__init__.py", line 250, in open
+    return Repo(url, *args, **kwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/repo/__init__.py", line 176, in __init__
+    self._scm = scm = SCM(root_dir or os.curdir)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/scm.py", line 99, in SCM
+    with map_scm_exception():
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/scm.py", line 81, in map_scm_exception
+    raise into
+dvc.scm.SCMError: ../ is not a git repository
+2022-09-08 13:38:26,114 - DataLoaderLogger - ERROR - DVC data getter raised an exception
+Traceback (most recent call last):
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/git/backend/dulwich/__init__.py", line 128, in __init__
+    self.repo = Repo.discover(start=root_dir)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dulwich/repo.py", line 1184, in discover
+    raise NotGitRepository(
+dulwich.errors.NotGitRepository: No git repository was found at ../
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/scm.py", line 76, in map_scm_exception
+    yield
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/scm.py", line 102, in SCM
+    return Git(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/git/__init__.py", line 98, in __init__
+    first_ = first(self.backends.values())
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/funcy/seqs.py", line 55, in first
+    return next(iter(seq), None)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/_collections_abc.py", line 925, in __iter__
+    yield self._mapping[key]
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/git/__init__.py", line 49, in __getitem__
+    initialized = backend(*self.args, **self.kwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/git/backend/dulwich/__init__.py", line 132, in __init__
+    raise SCMError(f"{root_dir} is not a git repository") from exc
+scmrepo.exceptions.SCMError: ../ is not a git repository
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/user/TENAC/week-1-4/Week-3/pharmaceutical-sales-prediction/scripts/dvc_data_fetch.py", line 25, in dvc_get_data
+    content = dvc.api.read(path=path,
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/api/data.py", line 210, in read
+    with open(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/api/data.py", line 197, in _open
+    with Repo.open(repo, rev=rev, subrepos=True, uninitialized=True) as _repo:
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/repo/__init__.py", line 250, in open
+    return Repo(url, *args, **kwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/repo/__init__.py", line 176, in __init__
+    self._scm = scm = SCM(root_dir or os.curdir)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/scm.py", line 99, in SCM
+    with map_scm_exception():
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/scm.py", line 81, in map_scm_exception
+    raise into
+dvc.scm.SCMError: ../ is not a git repository
+2022-09-08 13:38:58,469 - DataLoaderLogger - INFO - DVC: CSV file read with path: data/cleaned/store.csv | version: store_v2 | from: ./
+2022-09-08 13:39:54,046 - DataLoaderLogger - ERROR - DVC data getter raised an exception
+Traceback (most recent call last):
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/scm.py", line 159, in resolve_rev
+    return scm.resolve_rev(fix_exp_head(scm, rev))
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/git/__init__.py", line 289, in _backend_func
+    result = func(*args, **kwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/git/backend/pygit2.py", line 303, in resolve_rev
+    raise RevError(f"unknown Git revision '{rev}'")
+scmrepo.exceptions.RevError: unknown Git revision 'store_v2'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/user/TENAC/week-1-4/Week-3/pharmaceutical-sales-prediction/scripts/dvc_data_fetch.py", line 25, in dvc_get_data
+    content = dvc.api.read(path=path,
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/api/data.py", line 210, in read
+    with open(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/api/data.py", line 197, in _open
+    with Repo.open(repo, rev=rev, subrepos=True, uninitialized=True) as _repo:
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/external_repo.py", line 77, in external_repo
+    repo = Repo(**repo_kwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/repo/__init__.py", line 180, in __init__
+    self.root_dir, self.dvc_dir, self.tmp_dir = self._get_repo_dirs(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/repo/__init__.py", line 99, in _get_repo_dirs
+    root_dir = self.find_root(root_dir, fs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/repo/__init__.py", line 334, in find_root
+    root_dir = fs.path.realpath(root)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/funcy/objects.py", line 28, in __get__
+    res = instance.__dict__[self.fget.__name__] = self.fget(instance)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/fs/git.py", line 50, in path
+    return self.fs.path
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/funcy/objects.py", line 50, in __get__
+    return prop.__get__(instance, type)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/funcy/objects.py", line 28, in __get__
+    res = instance.__dict__[self.fget.__name__] = self.fget(instance)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/fs/git.py", line 46, in fs
+    return FsspecGitFileSystem(**self.fs_args)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/fsspec/spec.py", line 76, in __call__
+    obj = super().__call__(*args, **kwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/fs.py", line 174, in __init__
+    resolved = resolver(scm, rev or "HEAD")
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/scm.py", line 176, in resolve_rev
+    raise RevError(str(exc))
+dvc.scm.RevError: unknown Git revision 'store_v2'
+2022-09-08 13:39:55,473 - DataLoaderLogger - ERROR - DVC data getter raised an exception
+Traceback (most recent call last):
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/scm.py", line 159, in resolve_rev
+    return scm.resolve_rev(fix_exp_head(scm, rev))
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/git/__init__.py", line 289, in _backend_func
+    result = func(*args, **kwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/git/backend/pygit2.py", line 303, in resolve_rev
+    raise RevError(f"unknown Git revision '{rev}'")
+scmrepo.exceptions.RevError: unknown Git revision 'train_v2'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/user/TENAC/week-1-4/Week-3/pharmaceutical-sales-prediction/scripts/dvc_data_fetch.py", line 25, in dvc_get_data
+    content = dvc.api.read(path=path,
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/api/data.py", line 210, in read
+    with open(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/api/data.py", line 197, in _open
+    with Repo.open(repo, rev=rev, subrepos=True, uninitialized=True) as _repo:
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/external_repo.py", line 77, in external_repo
+    repo = Repo(**repo_kwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/repo/__init__.py", line 180, in __init__
+    self.root_dir, self.dvc_dir, self.tmp_dir = self._get_repo_dirs(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/repo/__init__.py", line 99, in _get_repo_dirs
+    root_dir = self.find_root(root_dir, fs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/repo/__init__.py", line 334, in find_root
+    root_dir = fs.path.realpath(root)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/funcy/objects.py", line 28, in __get__
+    res = instance.__dict__[self.fget.__name__] = self.fget(instance)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/fs/git.py", line 50, in path
+    return self.fs.path
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/funcy/objects.py", line 50, in __get__
+    return prop.__get__(instance, type)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/funcy/objects.py", line 28, in __get__
+    res = instance.__dict__[self.fget.__name__] = self.fget(instance)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/fs/git.py", line 46, in fs
+    return FsspecGitFileSystem(**self.fs_args)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/fsspec/spec.py", line 76, in __call__
+    obj = super().__call__(*args, **kwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/fs.py", line 174, in __init__
+    resolved = resolver(scm, rev or "HEAD")
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/scm.py", line 176, in resolve_rev
+    raise RevError(str(exc))
+dvc.scm.RevError: unknown Git revision 'train_v2'
+2022-09-08 13:39:56,870 - DataLoaderLogger - ERROR - DVC data getter raised an exception
+Traceback (most recent call last):
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/scm.py", line 159, in resolve_rev
+    return scm.resolve_rev(fix_exp_head(scm, rev))
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/git/__init__.py", line 289, in _backend_func
+    result = func(*args, **kwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/git/backend/pygit2.py", line 303, in resolve_rev
+    raise RevError(f"unknown Git revision '{rev}'")
+scmrepo.exceptions.RevError: unknown Git revision 'test_v2'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/user/TENAC/week-1-4/Week-3/pharmaceutical-sales-prediction/scripts/dvc_data_fetch.py", line 25, in dvc_get_data
+    content = dvc.api.read(path=path,
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/api/data.py", line 210, in read
+    with open(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/api/data.py", line 197, in _open
+    with Repo.open(repo, rev=rev, subrepos=True, uninitialized=True) as _repo:
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/external_repo.py", line 77, in external_repo
+    repo = Repo(**repo_kwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/repo/__init__.py", line 180, in __init__
+    self.root_dir, self.dvc_dir, self.tmp_dir = self._get_repo_dirs(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/repo/__init__.py", line 99, in _get_repo_dirs
+    root_dir = self.find_root(root_dir, fs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/repo/__init__.py", line 334, in find_root
+    root_dir = fs.path.realpath(root)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/funcy/objects.py", line 28, in __get__
+    res = instance.__dict__[self.fget.__name__] = self.fget(instance)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/fs/git.py", line 50, in path
+    return self.fs.path
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/funcy/objects.py", line 50, in __get__
+    return prop.__get__(instance, type)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/funcy/objects.py", line 28, in __get__
+    res = instance.__dict__[self.fget.__name__] = self.fget(instance)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/fs/git.py", line 46, in fs
+    return FsspecGitFileSystem(**self.fs_args)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/fsspec/spec.py", line 76, in __call__
+    obj = super().__call__(*args, **kwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/fs.py", line 174, in __init__
+    resolved = resolver(scm, rev or "HEAD")
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/scm.py", line 176, in resolve_rev
+    raise RevError(str(exc))
+dvc.scm.RevError: unknown Git revision 'test_v2'
+2022-09-08 13:40:49,215 - DataLoaderLogger - ERROR - DVC data getter raised an exception
+Traceback (most recent call last):
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/git/backend/dulwich/__init__.py", line 196, in clone
+    repo = clone_from()
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dulwich/porcelain.py", line 445, in clone
+    return client.clone(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dulwich/client.py", line 747, in clone
+    result = self.fetch(path, target, progress=progress, depth=depth)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dulwich/client.py", line 824, in fetch
+    result = self.fetch_pack(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dulwich/client.py", line 2079, in fetch_pack
+    refs, server_capabilities, url = self._discover_references(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dulwich/client.py", line 1938, in _discover_references
+    resp, read = self._http_request(url, headers)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dulwich/client.py", line 2209, in _http_request
+    resp = self.pool_manager.request(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/urllib3/request.py", line 74, in request
+    return self.request_encode_url(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/urllib3/request.py", line 96, in request_encode_url
+    return self.urlopen(method, url, **extra_kw)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/urllib3/poolmanager.py", line 365, in urlopen
+    conn = self.connection_from_host(u.host, port=u.port, scheme=u.scheme)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/urllib3/poolmanager.py", line 237, in connection_from_host
+    raise LocationValueError("No host specified.")
+urllib3.exceptions.LocationValueError: No host specified.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/scm.py", line 145, in clone
+    git = Git.clone(url, to_path, progress=pbar.update_git, **kwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/git/__init__.py", line 143, in clone
+    backend.clone(url, to_path, **kwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/git/backend/dulwich/__init__.py", line 199, in clone
+    raise CloneError(url, to_path) from exc
+scmrepo.exceptions.CloneError: Failed to clone repo 'https: // github.com/degagawolde/pharmaceutical-sales-prediction/tree/gitaction' to '/var/folders/6b/0t1qb1d92f72c46kvp35pwfc0000gn/T/tmp7a6ypnu4dvc-clone'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/user/TENAC/week-1-4/Week-3/pharmaceutical-sales-prediction/scripts/dvc_data_fetch.py", line 25, in dvc_get_data
+    content = dvc.api.read(path=path,
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/api/data.py", line 210, in read
+    with open(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/api/data.py", line 197, in _open
+    with Repo.open(repo, rev=rev, subrepos=True, uninitialized=True) as _repo:
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/external_repo.py", line 39, in external_repo
+    path = _cached_clone(url, rev, for_write=for_write)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/external_repo.py", line 169, in _cached_clone
+    clone_path, shallow = _clone_default_branch(url, rev, for_write=for_write)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/funcy/decorators.py", line 45, in wrapper
+    return deco(call, *dargs, **dkwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/funcy/flow.py", line 274, in wrap_with
+    return call()
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/funcy/decorators.py", line 66, in __call__
+    return self._func(*self._args, **self._kwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/external_repo.py", line 239, in _clone_default_branch
+    git = clone(url, clone_path)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/scm.py", line 150, in clone
+    raise CloneError(str(exc))
+dvc.scm.CloneError: Failed to clone repo 'https: // github.com/degagawolde/pharmaceutical-sales-prediction/tree/gitaction' to '/var/folders/6b/0t1qb1d92f72c46kvp35pwfc0000gn/T/tmp7a6ypnu4dvc-clone'
+2022-09-08 13:40:49,222 - DataLoaderLogger - ERROR - DVC data getter raised an exception
+Traceback (most recent call last):
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/git/backend/dulwich/__init__.py", line 196, in clone
+    repo = clone_from()
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dulwich/porcelain.py", line 445, in clone
+    return client.clone(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dulwich/client.py", line 747, in clone
+    result = self.fetch(path, target, progress=progress, depth=depth)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dulwich/client.py", line 824, in fetch
+    result = self.fetch_pack(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dulwich/client.py", line 2079, in fetch_pack
+    refs, server_capabilities, url = self._discover_references(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dulwich/client.py", line 1938, in _discover_references
+    resp, read = self._http_request(url, headers)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dulwich/client.py", line 2209, in _http_request
+    resp = self.pool_manager.request(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/urllib3/request.py", line 74, in request
+    return self.request_encode_url(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/urllib3/request.py", line 96, in request_encode_url
+    return self.urlopen(method, url, **extra_kw)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/urllib3/poolmanager.py", line 365, in urlopen
+    conn = self.connection_from_host(u.host, port=u.port, scheme=u.scheme)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/urllib3/poolmanager.py", line 237, in connection_from_host
+    raise LocationValueError("No host specified.")
+urllib3.exceptions.LocationValueError: No host specified.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/scm.py", line 145, in clone
+    git = Git.clone(url, to_path, progress=pbar.update_git, **kwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/git/__init__.py", line 143, in clone
+    backend.clone(url, to_path, **kwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/git/backend/dulwich/__init__.py", line 199, in clone
+    raise CloneError(url, to_path) from exc
+scmrepo.exceptions.CloneError: Failed to clone repo 'https: // github.com/degagawolde/pharmaceutical-sales-prediction/tree/gitaction' to '/var/folders/6b/0t1qb1d92f72c46kvp35pwfc0000gn/T/tmp9p6hqd8tdvc-clone'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/user/TENAC/week-1-4/Week-3/pharmaceutical-sales-prediction/scripts/dvc_data_fetch.py", line 25, in dvc_get_data
+    content = dvc.api.read(path=path,
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/api/data.py", line 210, in read
+    with open(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/api/data.py", line 197, in _open
+    with Repo.open(repo, rev=rev, subrepos=True, uninitialized=True) as _repo:
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/external_repo.py", line 39, in external_repo
+    path = _cached_clone(url, rev, for_write=for_write)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/external_repo.py", line 169, in _cached_clone
+    clone_path, shallow = _clone_default_branch(url, rev, for_write=for_write)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/funcy/decorators.py", line 45, in wrapper
+    return deco(call, *dargs, **dkwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/funcy/flow.py", line 274, in wrap_with
+    return call()
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/funcy/decorators.py", line 66, in __call__
+    return self._func(*self._args, **self._kwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/external_repo.py", line 239, in _clone_default_branch
+    git = clone(url, clone_path)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/scm.py", line 150, in clone
+    raise CloneError(str(exc))
+dvc.scm.CloneError: Failed to clone repo 'https: // github.com/degagawolde/pharmaceutical-sales-prediction/tree/gitaction' to '/var/folders/6b/0t1qb1d92f72c46kvp35pwfc0000gn/T/tmp9p6hqd8tdvc-clone'
+2022-09-08 13:40:49,226 - DataLoaderLogger - ERROR - DVC data getter raised an exception
+Traceback (most recent call last):
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/git/backend/dulwich/__init__.py", line 196, in clone
+    repo = clone_from()
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dulwich/porcelain.py", line 445, in clone
+    return client.clone(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dulwich/client.py", line 747, in clone
+    result = self.fetch(path, target, progress=progress, depth=depth)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dulwich/client.py", line 824, in fetch
+    result = self.fetch_pack(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dulwich/client.py", line 2079, in fetch_pack
+    refs, server_capabilities, url = self._discover_references(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dulwich/client.py", line 1938, in _discover_references
+    resp, read = self._http_request(url, headers)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dulwich/client.py", line 2209, in _http_request
+    resp = self.pool_manager.request(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/urllib3/request.py", line 74, in request
+    return self.request_encode_url(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/urllib3/request.py", line 96, in request_encode_url
+    return self.urlopen(method, url, **extra_kw)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/urllib3/poolmanager.py", line 365, in urlopen
+    conn = self.connection_from_host(u.host, port=u.port, scheme=u.scheme)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/urllib3/poolmanager.py", line 237, in connection_from_host
+    raise LocationValueError("No host specified.")
+urllib3.exceptions.LocationValueError: No host specified.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/scm.py", line 145, in clone
+    git = Git.clone(url, to_path, progress=pbar.update_git, **kwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/git/__init__.py", line 143, in clone
+    backend.clone(url, to_path, **kwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/git/backend/dulwich/__init__.py", line 199, in clone
+    raise CloneError(url, to_path) from exc
+scmrepo.exceptions.CloneError: Failed to clone repo 'https: // github.com/degagawolde/pharmaceutical-sales-prediction/tree/gitaction' to '/var/folders/6b/0t1qb1d92f72c46kvp35pwfc0000gn/T/tmpyo_8cg62dvc-clone'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/user/TENAC/week-1-4/Week-3/pharmaceutical-sales-prediction/scripts/dvc_data_fetch.py", line 25, in dvc_get_data
+    content = dvc.api.read(path=path,
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/api/data.py", line 210, in read
+    with open(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/api/data.py", line 197, in _open
+    with Repo.open(repo, rev=rev, subrepos=True, uninitialized=True) as _repo:
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/external_repo.py", line 39, in external_repo
+    path = _cached_clone(url, rev, for_write=for_write)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/external_repo.py", line 169, in _cached_clone
+    clone_path, shallow = _clone_default_branch(url, rev, for_write=for_write)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/funcy/decorators.py", line 45, in wrapper
+    return deco(call, *dargs, **dkwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/funcy/flow.py", line 274, in wrap_with
+    return call()
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/funcy/decorators.py", line 66, in __call__
+    return self._func(*self._args, **self._kwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/external_repo.py", line 239, in _clone_default_branch
+    git = clone(url, clone_path)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/scm.py", line 150, in clone
+    raise CloneError(str(exc))
+dvc.scm.CloneError: Failed to clone repo 'https: // github.com/degagawolde/pharmaceutical-sales-prediction/tree/gitaction' to '/var/folders/6b/0t1qb1d92f72c46kvp35pwfc0000gn/T/tmpyo_8cg62dvc-clone'
+2022-09-08 13:41:05,266 - DataLoaderLogger - ERROR - DVC data getter raised an exception
+Traceback (most recent call last):
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/git/backend/dulwich/__init__.py", line 196, in clone
+    repo = clone_from()
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dulwich/porcelain.py", line 445, in clone
+    return client.clone(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dulwich/client.py", line 747, in clone
+    result = self.fetch(path, target, progress=progress, depth=depth)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dulwich/client.py", line 824, in fetch
+    result = self.fetch_pack(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dulwich/client.py", line 2079, in fetch_pack
+    refs, server_capabilities, url = self._discover_references(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dulwich/client.py", line 1938, in _discover_references
+    resp, read = self._http_request(url, headers)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dulwich/client.py", line 2209, in _http_request
+    resp = self.pool_manager.request(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/urllib3/request.py", line 74, in request
+    return self.request_encode_url(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/urllib3/request.py", line 96, in request_encode_url
+    return self.urlopen(method, url, **extra_kw)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/urllib3/poolmanager.py", line 365, in urlopen
+    conn = self.connection_from_host(u.host, port=u.port, scheme=u.scheme)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/urllib3/poolmanager.py", line 237, in connection_from_host
+    raise LocationValueError("No host specified.")
+urllib3.exceptions.LocationValueError: No host specified.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/scm.py", line 145, in clone
+    git = Git.clone(url, to_path, progress=pbar.update_git, **kwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/git/__init__.py", line 143, in clone
+    backend.clone(url, to_path, **kwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/git/backend/dulwich/__init__.py", line 199, in clone
+    raise CloneError(url, to_path) from exc
+scmrepo.exceptions.CloneError: Failed to clone repo 'https: // github.com/degagawolde/pharmaceutical-sales-prediction/tree/gitaction' to '/var/folders/6b/0t1qb1d92f72c46kvp35pwfc0000gn/T/tmpvvsfvvt1dvc-clone'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/user/TENAC/week-1-4/Week-3/pharmaceutical-sales-prediction/scripts/dvc_data_fetch.py", line 25, in dvc_get_data
+    content = dvc.api.read(path=path,
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/api/data.py", line 210, in read
+    with open(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/api/data.py", line 197, in _open
+    with Repo.open(repo, rev=rev, subrepos=True, uninitialized=True) as _repo:
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/external_repo.py", line 39, in external_repo
+    path = _cached_clone(url, rev, for_write=for_write)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/external_repo.py", line 169, in _cached_clone
+    clone_path, shallow = _clone_default_branch(url, rev, for_write=for_write)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/funcy/decorators.py", line 45, in wrapper
+    return deco(call, *dargs, **dkwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/funcy/flow.py", line 274, in wrap_with
+    return call()
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/funcy/decorators.py", line 66, in __call__
+    return self._func(*self._args, **self._kwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/external_repo.py", line 239, in _clone_default_branch
+    git = clone(url, clone_path)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/scm.py", line 150, in clone
+    raise CloneError(str(exc))
+dvc.scm.CloneError: Failed to clone repo 'https: // github.com/degagawolde/pharmaceutical-sales-prediction/tree/gitaction' to '/var/folders/6b/0t1qb1d92f72c46kvp35pwfc0000gn/T/tmpvvsfvvt1dvc-clone'
+2022-09-08 13:41:05,271 - DataLoaderLogger - ERROR - DVC data getter raised an exception
+Traceback (most recent call last):
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/git/backend/dulwich/__init__.py", line 196, in clone
+    repo = clone_from()
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dulwich/porcelain.py", line 445, in clone
+    return client.clone(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dulwich/client.py", line 747, in clone
+    result = self.fetch(path, target, progress=progress, depth=depth)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dulwich/client.py", line 824, in fetch
+    result = self.fetch_pack(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dulwich/client.py", line 2079, in fetch_pack
+    refs, server_capabilities, url = self._discover_references(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dulwich/client.py", line 1938, in _discover_references
+    resp, read = self._http_request(url, headers)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dulwich/client.py", line 2209, in _http_request
+    resp = self.pool_manager.request(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/urllib3/request.py", line 74, in request
+    return self.request_encode_url(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/urllib3/request.py", line 96, in request_encode_url
+    return self.urlopen(method, url, **extra_kw)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/urllib3/poolmanager.py", line 365, in urlopen
+    conn = self.connection_from_host(u.host, port=u.port, scheme=u.scheme)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/urllib3/poolmanager.py", line 237, in connection_from_host
+    raise LocationValueError("No host specified.")
+urllib3.exceptions.LocationValueError: No host specified.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/scm.py", line 145, in clone
+    git = Git.clone(url, to_path, progress=pbar.update_git, **kwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/git/__init__.py", line 143, in clone
+    backend.clone(url, to_path, **kwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/git/backend/dulwich/__init__.py", line 199, in clone
+    raise CloneError(url, to_path) from exc
+scmrepo.exceptions.CloneError: Failed to clone repo 'https: // github.com/degagawolde/pharmaceutical-sales-prediction/tree/gitaction' to '/var/folders/6b/0t1qb1d92f72c46kvp35pwfc0000gn/T/tmp3vgt2y_rdvc-clone'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/user/TENAC/week-1-4/Week-3/pharmaceutical-sales-prediction/scripts/dvc_data_fetch.py", line 25, in dvc_get_data
+    content = dvc.api.read(path=path,
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/api/data.py", line 210, in read
+    with open(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/api/data.py", line 197, in _open
+    with Repo.open(repo, rev=rev, subrepos=True, uninitialized=True) as _repo:
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/external_repo.py", line 39, in external_repo
+    path = _cached_clone(url, rev, for_write=for_write)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/external_repo.py", line 169, in _cached_clone
+    clone_path, shallow = _clone_default_branch(url, rev, for_write=for_write)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/funcy/decorators.py", line 45, in wrapper
+    return deco(call, *dargs, **dkwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/funcy/flow.py", line 274, in wrap_with
+    return call()
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/funcy/decorators.py", line 66, in __call__
+    return self._func(*self._args, **self._kwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/external_repo.py", line 239, in _clone_default_branch
+    git = clone(url, clone_path)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/scm.py", line 150, in clone
+    raise CloneError(str(exc))
+dvc.scm.CloneError: Failed to clone repo 'https: // github.com/degagawolde/pharmaceutical-sales-prediction/tree/gitaction' to '/var/folders/6b/0t1qb1d92f72c46kvp35pwfc0000gn/T/tmp3vgt2y_rdvc-clone'
+2022-09-08 13:41:05,274 - DataLoaderLogger - ERROR - DVC data getter raised an exception
+Traceback (most recent call last):
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/git/backend/dulwich/__init__.py", line 196, in clone
+    repo = clone_from()
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dulwich/porcelain.py", line 445, in clone
+    return client.clone(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dulwich/client.py", line 747, in clone
+    result = self.fetch(path, target, progress=progress, depth=depth)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dulwich/client.py", line 824, in fetch
+    result = self.fetch_pack(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dulwich/client.py", line 2079, in fetch_pack
+    refs, server_capabilities, url = self._discover_references(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dulwich/client.py", line 1938, in _discover_references
+    resp, read = self._http_request(url, headers)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dulwich/client.py", line 2209, in _http_request
+    resp = self.pool_manager.request(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/urllib3/request.py", line 74, in request
+    return self.request_encode_url(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/urllib3/request.py", line 96, in request_encode_url
+    return self.urlopen(method, url, **extra_kw)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/urllib3/poolmanager.py", line 365, in urlopen
+    conn = self.connection_from_host(u.host, port=u.port, scheme=u.scheme)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/urllib3/poolmanager.py", line 237, in connection_from_host
+    raise LocationValueError("No host specified.")
+urllib3.exceptions.LocationValueError: No host specified.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/scm.py", line 145, in clone
+    git = Git.clone(url, to_path, progress=pbar.update_git, **kwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/git/__init__.py", line 143, in clone
+    backend.clone(url, to_path, **kwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/git/backend/dulwich/__init__.py", line 199, in clone
+    raise CloneError(url, to_path) from exc
+scmrepo.exceptions.CloneError: Failed to clone repo 'https: // github.com/degagawolde/pharmaceutical-sales-prediction/tree/gitaction' to '/var/folders/6b/0t1qb1d92f72c46kvp35pwfc0000gn/T/tmptt778pczdvc-clone'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/user/TENAC/week-1-4/Week-3/pharmaceutical-sales-prediction/scripts/dvc_data_fetch.py", line 25, in dvc_get_data
+    content = dvc.api.read(path=path,
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/api/data.py", line 210, in read
+    with open(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/api/data.py", line 197, in _open
+    with Repo.open(repo, rev=rev, subrepos=True, uninitialized=True) as _repo:
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/external_repo.py", line 39, in external_repo
+    path = _cached_clone(url, rev, for_write=for_write)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/external_repo.py", line 169, in _cached_clone
+    clone_path, shallow = _clone_default_branch(url, rev, for_write=for_write)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/funcy/decorators.py", line 45, in wrapper
+    return deco(call, *dargs, **dkwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/funcy/flow.py", line 274, in wrap_with
+    return call()
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/funcy/decorators.py", line 66, in __call__
+    return self._func(*self._args, **self._kwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/external_repo.py", line 239, in _clone_default_branch
+    git = clone(url, clone_path)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/scm.py", line 150, in clone
+    raise CloneError(str(exc))
+dvc.scm.CloneError: Failed to clone repo 'https: // github.com/degagawolde/pharmaceutical-sales-prediction/tree/gitaction' to '/var/folders/6b/0t1qb1d92f72c46kvp35pwfc0000gn/T/tmptt778pczdvc-clone'
+2022-09-08 13:42:07,675 - DataLoaderLogger - ERROR - DVC data getter raised an exception
+Traceback (most recent call last):
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/scm.py", line 159, in resolve_rev
+    return scm.resolve_rev(fix_exp_head(scm, rev))
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/git/__init__.py", line 289, in _backend_func
+    result = func(*args, **kwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/git/backend/pygit2.py", line 303, in resolve_rev
+    raise RevError(f"unknown Git revision '{rev}'")
+scmrepo.exceptions.RevError: unknown Git revision 'store_v2'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/user/TENAC/week-1-4/Week-3/pharmaceutical-sales-prediction/scripts/dvc_data_fetch.py", line 25, in dvc_get_data
+    content = dvc.api.read(path=path,
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/api/data.py", line 210, in read
+    with open(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/api/data.py", line 197, in _open
+    with Repo.open(repo, rev=rev, subrepos=True, uninitialized=True) as _repo:
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/external_repo.py", line 77, in external_repo
+    repo = Repo(**repo_kwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/repo/__init__.py", line 180, in __init__
+    self.root_dir, self.dvc_dir, self.tmp_dir = self._get_repo_dirs(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/repo/__init__.py", line 99, in _get_repo_dirs
+    root_dir = self.find_root(root_dir, fs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/repo/__init__.py", line 334, in find_root
+    root_dir = fs.path.realpath(root)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/funcy/objects.py", line 28, in __get__
+    res = instance.__dict__[self.fget.__name__] = self.fget(instance)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/fs/git.py", line 50, in path
+    return self.fs.path
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/funcy/objects.py", line 50, in __get__
+    return prop.__get__(instance, type)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/funcy/objects.py", line 28, in __get__
+    res = instance.__dict__[self.fget.__name__] = self.fget(instance)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/fs/git.py", line 46, in fs
+    return FsspecGitFileSystem(**self.fs_args)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/fsspec/spec.py", line 76, in __call__
+    obj = super().__call__(*args, **kwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/fs.py", line 174, in __init__
+    resolved = resolver(scm, rev or "HEAD")
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/scm.py", line 176, in resolve_rev
+    raise RevError(str(exc))
+dvc.scm.RevError: unknown Git revision 'store_v2'
+2022-09-08 13:42:09,124 - DataLoaderLogger - ERROR - DVC data getter raised an exception
+Traceback (most recent call last):
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/scm.py", line 159, in resolve_rev
+    return scm.resolve_rev(fix_exp_head(scm, rev))
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/git/__init__.py", line 289, in _backend_func
+    result = func(*args, **kwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/git/backend/pygit2.py", line 303, in resolve_rev
+    raise RevError(f"unknown Git revision '{rev}'")
+scmrepo.exceptions.RevError: unknown Git revision 'train_v2'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/user/TENAC/week-1-4/Week-3/pharmaceutical-sales-prediction/scripts/dvc_data_fetch.py", line 25, in dvc_get_data
+    content = dvc.api.read(path=path,
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/api/data.py", line 210, in read
+    with open(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/api/data.py", line 197, in _open
+    with Repo.open(repo, rev=rev, subrepos=True, uninitialized=True) as _repo:
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/external_repo.py", line 77, in external_repo
+    repo = Repo(**repo_kwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/repo/__init__.py", line 180, in __init__
+    self.root_dir, self.dvc_dir, self.tmp_dir = self._get_repo_dirs(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/repo/__init__.py", line 99, in _get_repo_dirs
+    root_dir = self.find_root(root_dir, fs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/repo/__init__.py", line 334, in find_root
+    root_dir = fs.path.realpath(root)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/funcy/objects.py", line 28, in __get__
+    res = instance.__dict__[self.fget.__name__] = self.fget(instance)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/fs/git.py", line 50, in path
+    return self.fs.path
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/funcy/objects.py", line 50, in __get__
+    return prop.__get__(instance, type)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/funcy/objects.py", line 28, in __get__
+    res = instance.__dict__[self.fget.__name__] = self.fget(instance)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/fs/git.py", line 46, in fs
+    return FsspecGitFileSystem(**self.fs_args)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/fsspec/spec.py", line 76, in __call__
+    obj = super().__call__(*args, **kwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/fs.py", line 174, in __init__
+    resolved = resolver(scm, rev or "HEAD")
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/scm.py", line 176, in resolve_rev
+    raise RevError(str(exc))
+dvc.scm.RevError: unknown Git revision 'train_v2'
+2022-09-08 13:42:10,563 - DataLoaderLogger - ERROR - DVC data getter raised an exception
+Traceback (most recent call last):
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/scm.py", line 159, in resolve_rev
+    return scm.resolve_rev(fix_exp_head(scm, rev))
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/git/__init__.py", line 289, in _backend_func
+    result = func(*args, **kwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/git/backend/pygit2.py", line 303, in resolve_rev
+    raise RevError(f"unknown Git revision '{rev}'")
+scmrepo.exceptions.RevError: unknown Git revision 'test_v2'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/user/TENAC/week-1-4/Week-3/pharmaceutical-sales-prediction/scripts/dvc_data_fetch.py", line 25, in dvc_get_data
+    content = dvc.api.read(path=path,
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/api/data.py", line 210, in read
+    with open(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/api/data.py", line 197, in _open
+    with Repo.open(repo, rev=rev, subrepos=True, uninitialized=True) as _repo:
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/contextlib.py", line 135, in __enter__
+    return next(self.gen)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/external_repo.py", line 77, in external_repo
+    repo = Repo(**repo_kwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/repo/__init__.py", line 180, in __init__
+    self.root_dir, self.dvc_dir, self.tmp_dir = self._get_repo_dirs(
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/repo/__init__.py", line 99, in _get_repo_dirs
+    root_dir = self.find_root(root_dir, fs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/repo/__init__.py", line 334, in find_root
+    root_dir = fs.path.realpath(root)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/funcy/objects.py", line 28, in __get__
+    res = instance.__dict__[self.fget.__name__] = self.fget(instance)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/fs/git.py", line 50, in path
+    return self.fs.path
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/funcy/objects.py", line 50, in __get__
+    return prop.__get__(instance, type)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/funcy/objects.py", line 28, in __get__
+    res = instance.__dict__[self.fget.__name__] = self.fget(instance)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/fs/git.py", line 46, in fs
+    return FsspecGitFileSystem(**self.fs_args)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/fsspec/spec.py", line 76, in __call__
+    obj = super().__call__(*args, **kwargs)
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/scmrepo/fs.py", line 174, in __init__
+    resolved = resolver(scm, rev or "HEAD")
+  File "/Users/user/miniforge3/envs/10A/lib/python3.10/site-packages/dvc/scm.py", line 176, in resolve_rev
+    raise RevError(str(exc))
+dvc.scm.RevError: unknown Git revision 'test_v2'
