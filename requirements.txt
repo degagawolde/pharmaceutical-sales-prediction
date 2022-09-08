@@ -218,7 +218,6 @@ smart-open==6.0.0
 smmap==5.0.0
 sniffio==1.2.0
 soupsieve==2.3.1
-sprt==0.0.1
 SQLAlchemy==1.4.39
 sqlparse==0.4.2
 stack-data==0.2.0
