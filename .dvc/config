@@ -6,3 +6,5 @@
     gdrive_client_id = 181701756043-22k1cgd0bdoam5r371kfn605hq4dkuei.apps.googleusercontent.com
     gdrive_client_secret = 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
     gdrive_use_service_account = true
+    profile = myprofile
+    gdrive_service_account_json_file_path = tmp/gdrive-user-credentials.json
