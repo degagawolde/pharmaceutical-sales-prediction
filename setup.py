@@ -1,9 +1,12 @@
-data_path = 'data/raw/store.csv'
-version = 'store_v1'
-repo = 'https://github.com/degagawolde/pharmaceutical-sales-prediction.git'
-
 import dvc.api
-url = dvc.api.get_url(path=data_path,
-                 repo=repo,
-                 rev=version)
-print(url)
+
+from scripts.dvc_data_fetch import DataLoader
+
+dvc_load = DataLoader()
+
+# First load the cleaned stores data
+data_path = 'data/cleaned/store.csv'
+version = 'store_v2'
+repo = './'
+
+store_df = dvc_load.dvc_get_data(data_path, version, repo)
