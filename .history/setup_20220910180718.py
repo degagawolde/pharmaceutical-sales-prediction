@@ -8,8 +8,8 @@ from scripts.dashboard_setup import (
 )
 
 
-st.image('images/ROSSMAN.jpg')
-st.header("Rossmann Pharmaceuticals Sales Prediction")
+st.image('images/ROSSMANN.jpg')
+st.header("Rossmann Pharmaceuticals Sales Forecaster")
 rf_reg_model = load_model(model_path='models/model.pkl')
 
 input_data = st.file_uploader(label="Upload a CSV or excel file",

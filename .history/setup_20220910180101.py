@@ -1,16 +1,15 @@
 import streamlit as st
 import pandas as pd
-
-from scripts.dashboard_setup import (
+from src.dashboard_helper import (
     load_model,
     preprocess,
     plot_predictions
 )
 
-
-st.image('images/ROSSMAN.jpg')
-st.header("Rossmann Pharmaceuticals Sales Prediction")
 rf_reg_model = load_model(model_path='models/model.pkl')
+
+st.image('images/ROSSMANN.jpg')
+st.header("Rossmann Pharmaceuticals Sales Forecaster")
 
 input_data = st.file_uploader(label="Upload a CSV or excel file",
                               type=['csv', 'xlsx'],
