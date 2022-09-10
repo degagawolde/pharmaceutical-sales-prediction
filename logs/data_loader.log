@@ -5317,3 +5317,6 @@ dvc.exceptions.FileMissingError: Can't find 'data/merged/test.csv' neither local
 2022-09-10 16:11:51,296 - DataLoaderLogger - INFO - DVC: CSV file read with path: data/cleaned/store.csv | version: store_v2 | from: ../
 2022-09-10 16:17:31,383 - DataLoaderLogger - INFO - DVC: CSV file read with path: data/merged/train.csv | version: train_v2 | from: ../
 2022-09-10 16:17:41,802 - DataLoaderLogger - INFO - DVC: CSV file read with path: data/merged/test.csv | version: test_v2 | from: ../
+2022-09-10 16:31:24,017 - DataLoaderLogger - INFO - DVC: CSV file read with path: data/cleaned/store.csv | version: store_v2 | from: ../
+2022-09-10 16:37:26,267 - DataLoaderLogger - INFO - DVC: CSV file read with path: data/merged/train.csv | version: train_v2 | from: ../
+2022-09-10 16:37:36,667 - DataLoaderLogger - INFO - DVC: CSV file read with path: data/merged/test.csv | version: test_v2 | from: ../

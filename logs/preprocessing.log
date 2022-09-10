@@ -1020,3 +1020,7 @@
 2022-09-10 11:07:22,778 - FeatureEngineeringLogger - INFO - generatd holidays
 2022-09-10 11:07:23,760 - FeatureEngineeringLogger - INFO - 9 new columns added to the dataframe
 2022-09-10 11:08:32,298 - FeatureEngineeringLogger - INFO - generated holidays distance
+2022-09-10 16:37:37,366 - FeatureEngineeringLogger - INFO - Dropped 2 columns since they are not in the test data
+2022-09-10 16:37:37,733 - FeatureEngineeringLogger - INFO - generatd holidays
+2022-09-10 16:37:38,703 - FeatureEngineeringLogger - INFO - 9 new columns added to the dataframe
+2022-09-10 16:38:46,914 - FeatureEngineeringLogger - INFO - generated holidays distance
