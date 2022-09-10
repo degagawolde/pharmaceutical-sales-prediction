@@ -44,11 +44,6 @@ jobs:
           echo $GDRIVE_TOKEN > .dvc/tmp/gdrive-user-credentials.json
           dvc pull -r dvc_remote 
 
-      - name: Run tests
-        env:
-          BRANCH_NAME: ${{ github.head_ref || github.ref_name }} 
+      - name: Run tests 
         run: |
-          echo $BRANCH_NAME
-          git config pull.rebase true
-          git pull origin $BRANCH_NAME --tags --prune
           python -m unittest tests/test_dvc.py
