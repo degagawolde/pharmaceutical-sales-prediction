@@ -42,7 +42,7 @@ jobs:
           mkdir -p .dvc/tmp
           touch .dvc/tmp/gdrive-user-credentials.json
           echo $GDRIVE_TOKEN > .dvc/tmp/gdrive-user-credentials.json
-          dvc pull -r myremote 
+          dvc pull -r dvc_remote 
 
       - name: Run tests
         env:
