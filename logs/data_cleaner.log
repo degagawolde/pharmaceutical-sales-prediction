@@ -231,3 +231,15 @@
 2022-09-10 07:29:42,563 - CleanDataFrameLogger - INFO - Replacing missing values in column: Promo2SinceWeek with method: zero
 2022-09-10 07:29:42,568 - CleanDataFrameLogger - INFO - Replacing missing values in column: Promo2SinceYear with method: zero
 2022-09-10 07:29:42,572 - CleanDataFrameLogger - INFO - Replacing missing values in column: PromoInterval with method: None
+2022-09-10 15:04:31,026 - CleanDataFrameLogger - INFO - Replacing missing values in column: Promo2SinceWeek with method: zero
+2022-09-10 15:04:31,026 - CleanDataFrameLogger - INFO - Replacing missing values in column: Promo2SinceWeek with method: zero
+2022-09-10 15:04:31,026 - CleanDataFrameLogger - INFO - Replacing missing values in column: Promo2SinceWeek with method: zero
+2022-09-10 15:04:31,029 - CleanDataFrameLogger - INFO - Replacing missing values in column: Promo2SinceYear with method: zero
+2022-09-10 15:04:31,029 - CleanDataFrameLogger - INFO - Replacing missing values in column: Promo2SinceYear with method: zero
+2022-09-10 15:04:31,029 - CleanDataFrameLogger - INFO - Replacing missing values in column: Promo2SinceYear with method: zero
+2022-09-10 15:04:31,031 - CleanDataFrameLogger - INFO - Replacing missing values in column: PromoInterval with method: None
+2022-09-10 15:04:31,031 - CleanDataFrameLogger - INFO - Replacing missing values in column: PromoInterval with method: None
+2022-09-10 15:04:31,031 - CleanDataFrameLogger - INFO - Replacing missing values in column: PromoInterval with method: None
+2022-09-10 15:37:11,921 - CleanDataFrameLogger - INFO - Replacing missing values in column: Promo2SinceWeek with method: zero
+2022-09-10 15:37:11,923 - CleanDataFrameLogger - INFO - Replacing missing values in column: Promo2SinceYear with method: zero
+2022-09-10 15:37:11,925 - CleanDataFrameLogger - INFO - Replacing missing values in column: PromoInterval with method: None
