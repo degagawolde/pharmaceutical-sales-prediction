@@ -976,3 +976,47 @@
 2022-09-09 22:04:19,497 - FeatureEngineeringLogger - INFO - generatd holidays
 2022-09-09 22:04:20,496 - FeatureEngineeringLogger - INFO - 9 new columns added to the dataframe
 2022-09-09 22:05:29,729 - FeatureEngineeringLogger - INFO - generated holidays distance
+2022-09-09 23:29:30,946 - FeatureEngineeringLogger - INFO - Dropped 1 columns since they are not in the test data
+2022-09-09 23:29:31,000 - FeatureEngineeringLogger - INFO - generatd holidays
+2022-09-09 23:29:31,959 - FeatureEngineeringLogger - INFO - 9 new columns added to the dataframe
+2022-09-09 23:30:40,608 - FeatureEngineeringLogger - INFO - generated holidays distance
+2022-09-09 23:51:29,628 - FeatureEngineeringLogger - INFO - Dropped 2 columns since they are not in the test data
+2022-09-09 23:51:29,686 - FeatureEngineeringLogger - INFO - generatd holidays
+2022-09-09 23:51:30,696 - FeatureEngineeringLogger - INFO - 9 new columns added to the dataframe
+2022-09-09 23:52:38,566 - FeatureEngineeringLogger - INFO - generated holidays distance
+2022-09-10 00:37:20,847 - FeatureEngineeringLogger - INFO - Dropped 2 columns since they are not in the test data
+2022-09-10 00:37:20,898 - FeatureEngineeringLogger - INFO - generatd holidays
+2022-09-10 00:37:21,876 - FeatureEngineeringLogger - INFO - 9 new columns added to the dataframe
+2022-09-10 00:38:30,663 - FeatureEngineeringLogger - INFO - generated holidays distance
+2022-09-10 07:13:20,613 - FeatureEngineeringLogger - INFO - Dropped 2 columns since they are not in the test data
+2022-09-10 07:13:20,681 - FeatureEngineeringLogger - INFO - generatd holidays
+2022-09-10 07:13:21,655 - FeatureEngineeringLogger - INFO - 9 new columns added to the dataframe
+2022-09-10 07:14:29,052 - FeatureEngineeringLogger - INFO - generated holidays distance
+2022-09-10 07:40:41,695 - FeatureEngineeringLogger - INFO - Dropped 2 columns since they are not in the test data
+2022-09-10 07:40:41,775 - FeatureEngineeringLogger - INFO - generatd holidays
+2022-09-10 07:40:42,731 - FeatureEngineeringLogger - INFO - 9 new columns added to the dataframe
+2022-09-10 07:41:49,598 - FeatureEngineeringLogger - INFO - generated holidays distance
+2022-09-10 08:24:36,301 - FeatureEngineeringLogger - INFO - Dropped 2 columns since they are not in the test data
+2022-09-10 08:24:36,382 - FeatureEngineeringLogger - INFO - generatd holidays
+2022-09-10 08:24:37,341 - FeatureEngineeringLogger - INFO - 9 new columns added to the dataframe
+2022-09-10 08:25:44,429 - FeatureEngineeringLogger - INFO - generated holidays distance
+2022-09-10 09:06:16,792 - FeatureEngineeringLogger - INFO - Dropped 2 columns since they are not in the test data
+2022-09-10 09:06:16,871 - FeatureEngineeringLogger - INFO - generatd holidays
+2022-09-10 09:06:17,831 - FeatureEngineeringLogger - INFO - 9 new columns added to the dataframe
+2022-09-10 09:07:25,682 - FeatureEngineeringLogger - INFO - generated holidays distance
+2022-09-10 09:09:41,430 - FeatureEngineeringLogger - INFO - Dropped 2 columns since they are not in the test data
+2022-09-10 09:09:41,531 - FeatureEngineeringLogger - INFO - generatd holidays
+2022-09-10 09:09:42,483 - FeatureEngineeringLogger - INFO - 9 new columns added to the dataframe
+2022-09-10 09:10:50,118 - FeatureEngineeringLogger - INFO - generated holidays distance
+2022-09-10 09:12:25,848 - FeatureEngineeringLogger - INFO - Dropped 2 columns since they are not in the test data
+2022-09-10 09:12:25,929 - FeatureEngineeringLogger - INFO - generatd holidays
+2022-09-10 09:12:26,969 - FeatureEngineeringLogger - INFO - 9 new columns added to the dataframe
+2022-09-10 09:13:40,604 - FeatureEngineeringLogger - INFO - generated holidays distance
+2022-09-10 10:59:06,210 - FeatureEngineeringLogger - INFO - Dropped 2 columns since they are not in the test data
+2022-09-10 10:59:06,616 - FeatureEngineeringLogger - INFO - generatd holidays
+2022-09-10 10:59:07,681 - FeatureEngineeringLogger - INFO - 9 new columns added to the dataframe
+2022-09-10 11:00:22,432 - FeatureEngineeringLogger - INFO - generated holidays distance
+2022-09-10 11:07:22,392 - FeatureEngineeringLogger - INFO - Dropped 2 columns since they are not in the test data
+2022-09-10 11:07:22,778 - FeatureEngineeringLogger - INFO - generatd holidays
+2022-09-10 11:07:23,760 - FeatureEngineeringLogger - INFO - 9 new columns added to the dataframe
+2022-09-10 11:08:32,298 - FeatureEngineeringLogger - INFO - generated holidays distance
