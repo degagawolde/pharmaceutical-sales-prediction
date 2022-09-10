@@ -51,12 +51,3 @@ class MissingInformation:
         totalMissing = missingCount.sum()
 
         return totalCells, missingCount, totalMissing
-
-
-    def get_missing_entries_count(self,df: pd.DataFrame) -> list[pd.Series, list]:
-        cols_missing_val_count = df.isnull().sum()
-        cols_missing_val_count = cols_missing_val_count[cols_missing_val_count != 0]
-        cols_missing_val = cols_missing_val_count.index.values
-        cols_missing_val_count
-
-        return cols_missing_val_count, cols_missing_val

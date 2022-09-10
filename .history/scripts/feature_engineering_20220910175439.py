@@ -18,7 +18,6 @@ class FeatureEngineering:
         logger.info(
             f"Dropped {len(self.columns_to_drop)} columns since they are not in the test data")
         return df
-    
     def transform(self, df: pd.DataFrame = None):
         if not isinstance(df, NoneType):
             self.df = df.copy()
@@ -30,7 +29,7 @@ class FeatureEngineering:
         
         logger.info("Feature enginerring completed")
 
-        return df
+        return self.df
 
     def generate_columns(self,df:pd.DataFrame) -> None:
         """Adds date related categorical columns to the dataframe"""

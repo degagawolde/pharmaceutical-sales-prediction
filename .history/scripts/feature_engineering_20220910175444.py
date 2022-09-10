@@ -18,7 +18,6 @@ class FeatureEngineering:
         logger.info(
             f"Dropped {len(self.columns_to_drop)} columns since they are not in the test data")
         return df
-    
     def transform(self, df: pd.DataFrame = None):
         if not isinstance(df, NoneType):
             self.df = df.copy()
