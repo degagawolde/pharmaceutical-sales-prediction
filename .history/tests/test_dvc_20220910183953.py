@@ -12,6 +12,8 @@ from dvc_data_fetch import DataLoader
 
 dvc_load = DataLoader()
 
+logging.basicConfig(filename='./logfile.log', filemode='a',
+                    encoding='utf-8', level=logging.DEBUG)
 
 # First load the cleaned stores data
 data_path = 'data/cleaned/store.csv'
