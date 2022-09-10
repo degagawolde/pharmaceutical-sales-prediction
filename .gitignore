@@ -4,3 +4,4 @@ data/raw/test.csv
 data/raw/train.csv
 data/cleaned/train.csv
 data/cleaned/store.csv
+tmp/
