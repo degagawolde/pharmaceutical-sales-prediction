@@ -1,4 +1,4 @@
-from io import StringIO
+from io import BytesIO, StringIO
 import traceback
 import pickle
 # import mlflow
@@ -49,7 +49,6 @@ def add_train_columns(df: pd.DataFrame) -> pd.DataFrame:
     except:
         pass
 
-
     return df
 
 
@@ -81,12 +80,51 @@ def plot_predictions(date, sales):
 
 
 def load_model(model_path: str = None):
-    # model_file = dataloader.dvc_get_data("models/model.pkl", 'rf-reg-v1', '.')
-    with dvc.api.open("models/model.pkl", "https://github.com/degagawolde/pharmaceutical-sales-prediction", "rf-reg-v1", mode='rb') as model_file:
-        # print(type(model_file))
-        # model_file = BytesIO(model_file)
-        # with open(model_path, 'rb') as f:
-        model = pickle.load(model_file)
-        # model = pickle.load(BytesIO(model_file))
+    
+    with dvc.api.open("models/model.pkl", "../", "lstm_v1", mode='rb') as model_file:
+       
+        model_file = BytesIO(model_file)
+        model = pickle.load(open(model_file, 'rb'))
 
     return model
+
+# convert series to supervised learning
+def series_to_supervised(dataset, n_in=1, n_out=1, dropnan=True):
+    n_vars = 1 if type(dataset) is list else dataset.shape[1]
+    df = pd.DataFrame(dataset)
+    cols, names = list(), list()
+    # input sequence (t-n, ... t-1)
+    for i in range(n_in, 0, -1):
+        cols.append(df.shift(i))
+        names += [('var%d(t-%d)' % (j+1, i)) for j in range(n_vars)]
+    # forecast sequence (t, t+1, ... t+n)
+    for i in range(0, n_out):
+        cols.append(df.shift(-i))
+        if i == 0:
+            names += [('var%d(t)' % (j+1)) for j in range(n_vars)]
+        else:
+            names += [('var%d(t+%d)' % (j+1, i)) for j in range(n_vars)]
+    # put it all together
+    agg = pd.concat(cols, axis=1)
+    agg.columns = names
+    # drop rows with NaN values
+    if dropnan:
+        agg.dropna(inplace=True)
+    return agg
+
+#read data from database
+def get_features(engine,database=False,dvc=False):
+    if database:
+        features = pd.read_sql_table(
+            'feutures',
+            con=engine.connect())
+        return features
+    if dvc:
+        repo = '../'
+        version = 'trained_v3'
+        data_path = '../data/cleaned/train.csv'
+        return dvc_load.dvc_get_data(data_path, version, repo)
+    else:
+        return pd.read_csv('./data/cleaned/train.csv')
+        
+    return features
