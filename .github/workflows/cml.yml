@@ -17,10 +17,11 @@ jobs:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GDRIVE_TOKEN: ${{ secrets.GDRIVE_CREDENTIALS_DATA }}
         run: |
+          echo $GDRIVE_TOKEN 
           mkdir -p .dvc/tmp
           touch .dvc/tmp/gdrive-user-credentials.json
           echo $GDRIVE_TOKEN > .dvc/tmp/gdrive-user-credentials.json
-          dvc pull -r dv_remote 
+          dvc pull -r dvc_remote 
       - name: write to CML report
         run: |
           echo "## Data Visualization" >> report.md
