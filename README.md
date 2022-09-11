@@ -20,7 +20,9 @@ logging.info('I told you so')
 ### Preprocessing
 Othor features like year, month, distance(after or before) from a holiday and othor features can be generated. [notebooks/FeatureEngineering.ipynb](https://github.com/degagawolde/pharmaceutical-sales-prediction/tree/main/notebooks) and [scripts/feature_engineering.py](https://github.com/degagawolde/pharmaceutical-sales-prediction/tree/main/scripts)
 ### Building models with sklearn pipelines
+notebooks/RFRegressor.ipynb](https://github.com/degagawolde/pharmaceutical-sales-prediction/tree/main/notebooks) and [scripts/training_pipeline.py](https://github.com/degagawolde/pharmaceutical-sales-prediction/tree/main/scripts)
 ### Choose a loss function
+The loss function used in this project is ***root means square error and R2***. we have to use this loss function as the problem is regression.
 ### Post Prediction analysis
 ### Serialize models
 ### Building model with deep learning 
