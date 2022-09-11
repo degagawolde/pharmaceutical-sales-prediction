@@ -44,8 +44,8 @@ notebooks/RFRegressor.ipynb](https://github.com/degagawolde/pharmaceutical-sales
 ### Choose a loss function
 The loss function used in this project is ***root means square error and R2***. we have to use this loss function as the problem is regression.
 ### Post Prediction analysis
-![predictino]()
-### Serialize models
+![predictino](https://github.com/degagawolde/pharmaceutical-sales-prediction/blob/main/images/postprediction.png)
+
 ### Building model with deep learning 
 ### Using MLFlow to serve the prediction
 # Serving predictions on a web interface
