@@ -18,6 +18,7 @@ logging.info('I told you so')
 ```
 # Prediction of store sales
 ### Preprocessing
+Othor features like year, month, distance(after or before) from a holiday and othor features can be generated. [notebooks/FeatureEngineering.ipynb](https://github.com/degagawolde/pharmaceutical-sales-prediction/tree/main/notebooks) and [scripts/feature_engineering.py](https://github.com/degagawolde/pharmaceutical-sales-prediction/tree/main/scripts)
 ### Building models with sklearn pipelines
 ### Choose a loss function
 ### Post Prediction analysis
