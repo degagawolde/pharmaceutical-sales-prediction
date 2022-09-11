@@ -47,5 +47,4 @@ The loss function used in this project is ***root means square error and R2***. 
 ![predictino](https://github.com/degagawolde/pharmaceutical-sales-prediction/blob/main/images/postprediction.png)
 
 ### Building model with deep learning 
-### Using MLFlow to serve the prediction
-# Serving predictions on a web interface
+LSTM is the most common deep learning used for time series analysis. [notebooks/DeepLearningTSA.ipynb]((https://github.com/degagawolde/pharmaceutical-sales-prediction/tree/main/notebooks))
