@@ -22,6 +22,8 @@ jobs:
           echo $GDRIVE_TOKEN > .dvc/tmp/gdrive-user-credentials.json
           dvc pull -r dvc_remote 
       - name: write to CML report
+        env:
+          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           echo "## Data Visualization" >> report.md
           cml publish images/correlation.png --md >> report.md
