@@ -39,9 +39,9 @@ jobs:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GDRIVE_TOKEN: ${{ secrets.GDRIVE_CREDENTIALS_DATA }}
         run: |
-          mkdir -p .dvc/.gdrive
+          mkdir -p .dvc/tmp
           touch .dvc/.gdrive/gdrive-user-credentials.json
-          echo $GDRIVE_TOKEN > .dvc/.gdrive/gdrive-user-credentials.json
+          echo $GDRIVE_TOKEN > .dvc/tmp/gdrive-user-credentials.json
           dvc pull -r dvc_remote 
 
       - name: Run tests 
@@ -49,7 +49,7 @@ jobs:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GDRIVE_TOKEN: ${{ secrets.GDRIVE_CREDENTIALS_DATA }}
         run: |
-          mkdir -p .dvc/.gdrive
+          mkdir -p .dvc/tmp
           touch .dvc/.gdrive/gdrive-user-credentials.json
-          echo $GDRIVE_TOKEN > .dvc/.gdrive/gdrive-user-credentials.json
+          echo $GDRIVE_TOKEN > .dvc/tmp/gdrive-user-credentials.json
           python -m unittest tests/test_dvc.py
