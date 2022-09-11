@@ -45,5 +45,8 @@ jobs:
           dvc pull -r dvc_remote 
 
       - name: Run tests 
+        env:
+          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GDRIVE_TOKEN: ${{ secrets.GDRIVE_CREDENTIALS_DATA }}
         run: |
           python -m unittest tests/test_dvc.py
