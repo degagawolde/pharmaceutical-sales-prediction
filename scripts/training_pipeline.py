@@ -79,10 +79,6 @@ class SkLearnPipeline(Pipeline):
         # print(feature_importance)
 
         mlflow.set_tracking_uri('http://127.0.0.1:5000')
-        # mlflow.set_tracking_uri('../mlflow_outputs/mlruns')
-        # mlflow.set_experiment(experiment_name)
-        # Commented out because of this: https://lifesaver.codes/answer/runid-not-found-when-executing-mlflow-run-with-remote-tracking-server-608
-
         with mlflow.start_run(run_name=run_name):
             if run_params:
                 for name in run_params:
@@ -92,11 +88,7 @@ class SkLearnPipeline(Pipeline):
                 mlflow.log_metric(name, run_metrics[name])
             print("Run metrics saved")
             mlflow.log_param("columns", X_test.columns.to_list())
-            # print("logging figures")
-            # mlflow.log_figure(pred_plot, "predictions_plot.png")
-            # mlflow.log_figure(cm_plot, "confusion_matrix.png")
-            # mlflow.log_figure(feature_importance_plot,
-            #                   "feature_importance.png")
+    
             print("figures saved with mlflow")
             pred_plot.savefig("../images/predictions_plot.png")
 
@@ -107,9 +99,7 @@ class SkLearnPipeline(Pipeline):
             # print("Saving artifacts")
             mlflow.log_dict(feature_importance, "feature_importance.json")
             print("saving dict")
-        # model_name = self.make_model_name(experiment_name, run_name)
-        # mlflow.sklearn.log_model(
-        #     sk_model=self.__pipeline, artifact_path='models', registered_model_name=model_name)
+  
         print('Run - %s is logged to Experiment - %s' %
               (run_name, experiment_name))
         return run_metrics
