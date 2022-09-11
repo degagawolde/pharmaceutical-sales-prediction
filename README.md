@@ -19,6 +19,26 @@ logging.info('I told you so')
 # Prediction of store sales
 ### Preprocessing
 Othor features like year, month, distance(after or before) from a holiday and othor features can be generated. [notebooks/FeatureEngineering.ipynb](https://github.com/degagawolde/pharmaceutical-sales-prediction/tree/main/notebooks) and [scripts/feature_engineering.py](https://github.com/degagawolde/pharmaceutical-sales-prediction/tree/main/scripts)
+```
+df.loc[:, ['Year']] = pd.to_datetime( df['Date'], format='%Y-%m-%d').dt.year
+df.loc[:, ['Month']] = pd.to_datetime(df['Date'], format='%Y-%m-%d').dt.month
+df.loc[:, ['WeekOfYear']] = pd.to_datetime(df['Date'], format='%Y-%m-%d').dt.isocalendar().week
+df.loc[:, ['is_month_end']] = pd.to_datetime(df['Date'], format='%Y-%m-%d').dt.is_month_end
+df.loc[:, ['is_month_start']] = pd.to_datetime(df['Date'], format='%Y-%m-%d').dt.is_month_start
+df.loc[:, ['is_quarter_end']] = pd.to_datetime(df['Date'], format='%Y-%m-%d').dt.is_quarter_end
+df.loc[:, ['is_quarter_start']] = pd.to_datetime(df['Date'], format='%Y-%m-%d').dt.is_quarter_start
+df.loc[:, ['is_year_end']] = pd.to_datetime(df['Date'], format='%Y-%m-%d').dt.is_year_end
+df.loc[:, ['is_year_start']] = pd.to_datetime(df['Date'], format='%Y-%m-%d').dt.is_year_start     
+```
+Function to calculate distance from/to holidays
+```
+def _get_holiday_distances(self, date,holidays) -> list[int, int]:
+  """takes in a date, then tells me it's distance on both dxns for the closest holiday"""
+  previous, upcoming = self._get_neighbors(date, holidays)
+  after_holiday = date - previous
+  to_next_holiday = upcoming - date
+  return int(after_holiday.days), int(to_next_holiday.days)
+```
 ### Building models with sklearn pipelines
 notebooks/RFRegressor.ipynb](https://github.com/degagawolde/pharmaceutical-sales-prediction/tree/main/notebooks) and [scripts/training_pipeline.py](https://github.com/degagawolde/pharmaceutical-sales-prediction/tree/main/scripts)
 ### Choose a loss function
