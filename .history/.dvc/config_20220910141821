@@ -1,7 +1,0 @@
-[core]
-    remote = dvc_remote
-['remote "dvc_remote"']
-    url = gdrive://1inHepEK_QdOe1KN_FUM8kKuZqtO-jm13
-    gdrive_client_id = 181701756043-22k1cgd0bdoam5r371kfn605hq4dkuei.apps.googleusercontent.com
-    gdrive_client_secret = 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
-    gdrive_user_credentials_file = "../.gdrive/dvc_remote-credentials.json"

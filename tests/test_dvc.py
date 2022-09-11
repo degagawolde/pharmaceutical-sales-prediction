@@ -16,20 +16,18 @@ dvc_load = DataLoader()
 # First load the cleaned stores data
 data_path = 'data/cleaned/store.csv'
 version = 'store_v2'
-repo = './'
+repo = 'https://github.com/degagawolde/pharmaceutical-sales-prediction.git'
 
 store_df = dvc_load.dvc_get_data(data_path, version, repo)
 
 # Then load the raw sales data
 data_path = 'data/merged/train.csv'
 version = 'train_v2'
-
 train_df = dvc_load.dvc_get_data(data_path, version, repo)
 
 # Finally load the test data
 data_path = 'data/merged/test.csv'
 version = 'test_v2'
-
 test_df = dvc_load.dvc_get_data(data_path, version, repo)
 
 class TestGetInformations(unittest.TestCase):
