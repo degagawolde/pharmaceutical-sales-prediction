@@ -34,9 +34,9 @@ dvc_load = DataLoader()
 
 # test_df = dvc_load.dvc_get_data(data_path, version, repo)
 
-store_df = pd.read_csv('data/raw/store.csv')
-tran_df = pd.read_csv('data/merged/test.csv')
-tran_df = pd.read_csv('data/merged/test.csv')
+store_df = pd.read_csv('../data/raw/store.csv')
+tran_df = pd.read_csv('../data/merged/test.csv')
+tran_df = pd.read_csv('../data/merged/test.csv')
 class TestGetInformations(unittest.TestCase):
     # def setUp(self):
     
