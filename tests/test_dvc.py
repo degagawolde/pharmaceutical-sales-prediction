@@ -14,22 +14,25 @@ dvc_load = DataLoader()
 
 
 # First load the cleaned stores data
-data_path = 'data/cleaned/store.csv'
-version = 'eaf6d2e8828a365523b9b8800a79d45c6b236368'
-repo = 'https://github.com/degagawolde/pharmaceutical-sales-prediction'
+# data_path = 'data/cleaned/store.csv'
+# version = 'eaf6d2e8828a365523b9b8800a79d45c6b236368'
+# repo = 'https://github.com/degagawolde/pharmaceutical-sales-prediction'
 
-store_df = dvc_load.dvc_get_data(data_path, version, repo)
+# store_df = dvc_load.dvc_get_data(data_path, version, repo)
 
-# Then load the raw sales data
-data_path = 'data/merged/train.csv'
-version = '2c43bd5e314858f9b692a7d67fc894e8c04b282a'
-train_df = dvc_load.dvc_get_data(data_path, version, repo)
+# # Then load the raw sales data
+# data_path = 'data/merged/train.csv'
+# version = '2c43bd5e314858f9b692a7d67fc894e8c04b282a'
+# train_df = dvc_load.dvc_get_data(data_path, version, repo)
 
-# Finally load the test data
-data_path = 'data/merged/test.csv'
-version = 'ecc063bb453b6ca9e10fb2341d58ebbfe40b2514'
-test_df = dvc_load.dvc_get_data(data_path, version, repo)
+# # Finally load the test data
+# data_path = 'data/merged/test.csv'
+# version = 'ecc063bb453b6ca9e10fb2341d58ebbfe40b2514'
+# test_df = dvc_load.dvc_get_data(data_path, version, repo)
 
+train_df = pd.read_csv('./data/merged/train.csv')
+test_df = pd.read_csv('./data/merged/test.csv')
+store_df = pd.read_csv('./data/cleaned/store.csv')
 class TestGetInformations(unittest.TestCase):
     # def setUp(self):
     
