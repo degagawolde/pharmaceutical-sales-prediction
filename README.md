@@ -40,7 +40,7 @@ def _get_holiday_distances(self, date,holidays) -> list[int, int]:
   return int(after_holiday.days), int(to_next_holiday.days)
 ```
 ### Building models with sklearn pipelines
-notebooks/RFRegressor.ipynb](https://github.com/degagawolde/pharmaceutical-sales-prediction/tree/main/notebooks) and [scripts/training_pipeline.py](https://github.com/degagawolde/pharmaceutical-sales-prediction/tree/main/scripts)
+[notebooks/RFRegressor.ipynb](https://github.com/degagawolde/pharmaceutical-sales-prediction/tree/main/notebooks) and [scripts/training_pipeline.py](https://github.com/degagawolde/pharmaceutical-sales-prediction/tree/main/scripts)
 ### Choose a loss function
 The loss function used in this project is ***root means square error and R2***. we have to use this loss function as the problem is regression.
 ### Post Prediction analysis
